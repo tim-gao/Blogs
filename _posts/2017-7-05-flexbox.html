@@ -2,11 +2,12 @@
 layout: default
 title: 翻译：Flexbox详解
 ---
-<strong><h2>弹性布局(Flexbox)完整蓝图</h2></strong>
+<div class="container">
+<strong><h2>弹性布局(Flexbox)</h2></strong>
 <p>{{page.date | date_to_string}}</p>
 
 <fieldset>
-    <legend>背景:</legend>
+    <legend>背景</legend>
     弹性布局模型(Flexible Box)旨在提供一种非常高效的布局方式，对齐和分配容器中各个子元素的空间，甚至于他们的尺寸是未知的或者动态的。（因此叫弹性布局）。
 
     弹性布局的主要方法是赋予容器能够识别子元素的宽度或者高度的能力来完美的填充可利用的空间（最大的适用所有种类的设备尺寸）。弹性布局的容器可以扩张子元素来填充多余的空间，也可以缩放元素避免其溢出。
@@ -15,6 +16,170 @@ title: 翻译：Flexbox详解
 </fieldset>
 <fieldset>
     <legend>基础和术语</legend>
-    既然弹性布局是一一个模块而非单个属性，自然会包含很多的属性。其中有些是需要设置在容器上，
+    既然弹性布局是一一个模块而非单个属性，自然会包含很多的属性。其中有些是设置在容器上(父容器，即"flex container")，有些是设置在孩子节点上(即"flex item"),如以下详细示意图。
+    <div><img alt="flex-image" src="{{site.baseurl}}/images/flexbox.png"></div>
+
+    通常情况下，元素的布局是参照主轴(main axis,布局按照从main-start到main-end)或者是交叉轴(cross axis,布局按照从cross-start到cross-end).
+    <ul>
+        <li>
+            <label><strong>main axis</strong></label>-
+            flex容器的main axis是元素布局排列时参考的的主要轴线。注意，它并不是一定就是横向的，它依赖于flex-direction的值。（具体详见下文）
+        </li>
+        <li>
+            <label><strong>main-start | main-end</strong></label>-
+            弹性容器中的元素在按照从main-start到main-end的方向排放。
+        </li>
+        <li>
+            <label><strong>main size</strong></label>-
+            弹性容器中元素的宽度或者高度，whichever is in the main dimension, is the item's main size. The flex item's main size property is either the ‘width’ or ‘height’ property, whichever is in the main dimension.
+        </li>
+        <li>
+            <label><strong>Cross axis</strong></label>-
+            与主轴垂直的轴线就是交叉轴。它的方向基于主轴(main axis)的方向。
+        </li>
+        <li>
+            <label><strong>cross start | cross end</strong></label>-
+            Flex布局的行被元素所田中，并且每一行的排列按照从cross-start到cross-end.
+        </li>
+        <li>
+            <label><strong>cross size</strong></label>-
+            The width or height of a flex item, whichever is in the cross dimension, is the item's cross size. The cross size property is whichever of ‘width’ or ‘height’ that is in the cross dimension.
+        </li>
+    </ul>
+    <img src="{{site.baseurl}}/images/flex-container.svg">
+    <img src="{{site.baseurl}}/images/flex-items.svg">
+    <h2>父容器的属性(flex container)</h2>
+    <div class="parent">
+        <div class="prop-item">
+            <h4 id="p-t-1"><a class="title" href="#p-t-1">#</a>display</h4>
+            <div class="detail">
+                这个属性定义了一个flex布局的容器；属于行内元素还是块级元素取决了指定的值。它为所有的的直属孩子节点创建了一个flex的上下文。
+                <pre ref="CSS" class="">
+                    <code>
+<span class="prop">.container</span> {
+  <span class="key">display</span>: <span class="value">flex; /* or inline-flex */</span>
+}</code>
+                </pre>
+            </div>
+        </div>
+        <div class="prop-item">
+            <h4 id="p-t-2"><a class="title" href="p-t-2">#</a>flex-direction</h4>
+            <div class="detail">
+                <div><img src="{{site.baseurl}}/images/flex-direction2.svg"></div>
+                这个属性建立了主轴线，因而定义了元素在flex容器中的摆放方向。Flexbox是一种单方向的布局。所以可以想象到flex布局的元素排列要么是横向的，要么是竖向的。
+                <pre ref="CSS" class="">
+                    <code>
+<span class="prop">.container</span> {
+  <span class="key">flex-direction</span>: <span class="value">row | row-reverse | column |column-reverse</span>
+}</code>
+                </pre>
+                <ul>
+                    <li>row(默认): 从左到右从（默认文本排列是ltr）;从右到左（默认文本排列是rtl）</li>
+                    <li>row-reverse:与row属性方向相反 </li>
+                    <li>column: 和row属性类似，但是从上到下</li>
+                    <li>column-reverse:和row-reverse类似，但是从下到上 </li>
+                </ul>
+            </div>
+        </div>
+        <div class="prop-item">
+            <h4 id="p-t-3"><a class="title" href="p-t-3">#</a>flex-wrap</h4>
+            <div class="detail">
+                <div><img src="{{site.baseurl}}/images/flex-wrap.svg"></div>
+                默认情况下，flex的元素试图显示在一行中。你可以通过本属性允许元素在需要的情况下自动换行。
+                <pre ref="CSS" class="">
+                    <code>
+<span class="prop">.container</span> {
+  <span class="key">flex-wrap</span>: <span class="value">nowrap | wrap | wrap-reverse </span>
+}</code>
+                </pre>
+                <ul>
+                    <li>nowrap(默认):所有元素都会显示在一行。</li>
+                    <li>wrap:flex元素将会换行，从上到下。</li>
+                    <li>wrap-reverse：flex元素将换行从下到上</li>
+                </ul>
+                具体参考下列示意图:
+                <h5><strong>flex-wrap: nowrap</strong></h5>
+                <div class="demo-flex-wrap nowrap">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                    <div>5</div>
+                    <div>6</div>
+                    <div>7</div>
+                    <div>8</div>
+                </div>
+                <h5><strong>flex-wrap: wrap</strong></h5>
+                <div class="demo-flex-wrap wrap">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                    <div>5</div>
+                    <div>6</div>
+                    <div>7</div>
+                    <div>8</div>
+                </div>
+                <h5><strong>flex-wrap: wrap-reverse</strong></h5>
+                <div class="demo-flex-wrap wrap-reverse">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                    <div>5</div>
+                    <div>6</div>
+                    <div>7</div>
+                    <div>8</div>
+                </div>
+            </div>
+        </div>
+        <div class="prop-item">
+            <h4 id="p-t-4"><a class="title" href="#p-t-4">#</a>flex-flow</h4>
+            <div class="detail"></div>
+        </div>
+        <div class="prop-item">
+            <h4 id="p-t-5"><a class="title" href="#p-t-5">#</a>justify-content</h4>
+            <div class="detail"></div>
+        </div>
+        <div class="prop-item">
+            <h4 id="p-t-6"><a class="title" href="#p-t-6">#</a>align-items</h4>
+            <div class="detail"></div>
+        </div>
+        <div class="prop-item">
+            <h4 id="p-t-7"><a class="title" href="#p-t-7">#</a></h4>
+            <div class="detail">align-content</div>
+        </div>
+    </div>
+    <h2>孩子节点属性(flex items)</h2>
+    <div class="children">
+        <div class="prop-item">
+            <h4 id="c-t-1"><a class="title" href="#c-t-1">#</a>order</h4>
+            <div class="detail"></div>
+        </div>
+        <div class="prop-item">
+            <h4 id="c-t-2"><a class="title" href="#c-t-2">#</a>flex-grow</h4>
+            <div class="detail"></div>
+        </div>
+        <div class="prop-item">
+            <h4 id="c-t-3"><a class="title" href="#c-t-3">#</a></h4>
+            <div class="detail">flex-shrink</div>
+        </div>
+        <div class="prop-item">
+            <h4 id="c-t-4"><a class="title" href="#c-t-4">#</a>flex-basis</h4>
+            <div class="detail"></div>
+        </div>
+        <div class="prop-item">
+            <h4 id="c-t-5"><a class="title" href="#c-t-5">#</a>flex</h4>
+            <div class="detail"></div>
+        </div>
+        <div class="prop-item">
+            <h4 id="c-t-6"><a class="title" href="#c-t-6">#align-self</a>align-self</h4>
+            <div class="detail"></div>
+        </div>
+    </div>
+    
+    
     ...未完待续
 </fieldset>
+<a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox">原文地址：https://css-tricks.com/snippets/css/a-guide-to-flexbox</a>
+</div>
