@@ -18,7 +18,11 @@
         margin:0;
     }
 }
-
+.parent,
+.children {
+    float: left;
+    width: 50%;
+}
 .parent .prop-item {
     background: -webkit-linear-gradient(rgba(156,39,176,0.2), white);
     background: linear-gradient(rgba(156,39,176,0.2), white);
@@ -27,50 +31,27 @@
     background: -webkit-linear-gradient(rgba(255,152,0,0.2), white);
     background: linear-gradient(rgba(255,152,0,0.2), white);
 }
-.title {
-    
-}
+.clearfix {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
 
+    &:after {
+        clear: both;
+    }
+}
 .detail {
 
-    pre {
-        background: #000;
-        position: relative;
-        color: #fff;
-        font-size: 1.2em;
-        margin:0;
-        padding-left: 15px;
-        max-width: 800px;
-
-        .prop {
-            color: #dfc48c;
-        }
-        .key {
-           color: #9b869c;
-        }
-        .value {
-            color: #cd6a51;
-        }
-    }
-    pre[ref="CSS"] {
-        &::before {
-            position: absolute;
-            top: 0;
-            left: 0;
-            background-color: #FF9800;
-            content:attr(ref);
+    .img-wrapper {
+        img {
             width: 100%;
-            text-indent: 15px;
         }
     }
-
-    img {
-        width: 600px;
-    }
-
     .demo-flex-wrap {
         display: flex;
-        width: 700px;
+        width: 100%;
         border: 1px solid;
         margin: 10px 0;
         >div {
@@ -105,5 +86,41 @@
                 background-color: blue;
             }
         }
+    }
+}
+
+pre {
+    background: #000;
+    position: relative;
+    color: #fff;
+    font-size: 1.2em;
+    margin:0;
+
+    .prop {
+        color: #dfc48c;
+    }
+    .key {
+       color: #9b869c;
+    }
+    .value {
+        color: #cd6a51;
+    }
+    
+    code {
+        display: block;
+        width: 100%;
+        overflow: auto;
+    }
+}
+pre[ref="CSS"],
+pre[ref="SCSS"] {
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #FF9800;
+        content:attr(ref);
+        width: 100%;
+        text-indent: 15px;
     }
 }

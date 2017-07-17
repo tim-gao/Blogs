@@ -7,7 +7,7 @@ title: 翻译：Flexbox详解
 <p>{{page.date | date_to_string}}</p>
 
 <fieldset>
-    <legend>背景</legend>
+    <legend><h2>背景</h2></legend>
     弹性布局模型(Flexible Box)旨在提供一种非常高效的布局方式，对齐和分配容器中各个子元素的空间，甚至于他们的尺寸是未知的或者动态的。（因此叫弹性布局）。
 
     弹性布局的主要方法是赋予容器能够识别子元素的宽度或者高度的能力来完美的填充可利用的空间（最大的适用所有种类的设备尺寸）。弹性布局的容器可以扩张子元素来填充多余的空间，也可以缩放元素避免其溢出。
@@ -15,7 +15,7 @@ title: 翻译：Flexbox详解
     弹性布局区别于通常布局（块级元素是基于竖向排列的，行内元素是基于横向排列的）的最重要的一点是在排列的方向上（横向/竖向）是未知的。尽管通常的布局可以很好的工作于页面中，但它在支持大屏幕或者复杂的应用程序中缺少灵活性。特别是当屏幕方向翻转，页面大小发生变化，拉伸，压缩等如此状况的时候。
 </fieldset>
 <fieldset>
-    <legend>基础和术语</legend>
+    <legend><h2>基础和术语</h2></legend>
     既然弹性布局是一一个模块而非单个属性，自然会包含很多的属性。其中有些是设置在容器上(父容器，即"flex container")，有些是设置在孩子节点上(即"flex item"),如以下详细示意图。
     <div><img alt="flex-image" src="{{site.baseurl}}/images/flexbox.png"></div>
 
@@ -48,31 +48,29 @@ title: 翻译：Flexbox详解
     </ul>
     <img src="{{site.baseurl}}/images/flex-container.svg">
     <img src="{{site.baseurl}}/images/flex-items.svg">
-    <h2>父容器的属性(flex container)</h2>
+    <div class="clearfix">
     <div class="parent">
+        <h2>父容器的属性(flex container)</h2>
         <div class="prop-item">
             <h4 id="p-t-1"><a class="title" href="#p-t-1">#</a>display</h4>
             <div class="detail">
                 这个属性定义了一个flex布局的容器；属于行内元素还是块级元素取决了指定的值。它为所有的的直属孩子节点创建了一个flex的上下文。
-                <pre ref="CSS" class="">
-                    <code>
+                <pre ref="CSS" class=""><code>
 <span class="prop">.container</span> {
   <span class="key">display</span>: <span class="value">flex; /* or inline-flex */</span>
-}</code>
-                </pre>
+}</code></pre>
             </div>
         </div>
         <div class="prop-item">
             <h4 id="p-t-2"><a class="title" href="#p-t-2">#</a>flex-direction</h4>
             <div class="detail">
-                <div><img src="{{site.baseurl}}/images/flex-direction2.svg"></div>
+                <div class="img-wrapper"><img src="{{site.baseurl}}/images/flex-direction2.svg"></div>
                 这个属性建立了主轴线，因而定义了元素在flex容器中的摆放方向。Flexbox是一种单方向的布局。所以可以想象到flex布局的元素排列要么是横向的，要么是竖向的。
                 <pre ref="CSS" class="">
                     <code>
 <span class="prop">.container</span> {
   <span class="key">flex-direction</span>: <span class="value">row | row-reverse | column |column-reverse</span>
-}</code>
-                </pre>
+}</code></pre>
                 <ul>
                     <li>row(默认): 从左到右从（默认文本排列是ltr）;从右到左（默认文本排列是rtl）</li>
                     <li>row-reverse:与row属性方向相反 </li>
@@ -84,14 +82,13 @@ title: 翻译：Flexbox详解
         <div class="prop-item">
             <h4 id="p-t-3"><a class="title" href="#p-t-3">#</a>flex-wrap</h4>
             <div class="detail">
-                <div><img src="{{site.baseurl}}/images/flex-wrap.svg"></div>
+                <div class="img-wrapper"><img src="{{site.baseurl}}/images/flex-wrap.svg"></div>
                 默认情况下，flex的元素试图显示在一行中。你可以通过本属性允许元素在需要的情况下自动换行。
                 <pre ref="CSS" class="">
                     <code>
 <span class="prop">.container</span> {
   <span class="key">flex-wrap</span>: <span class="value">nowrap | wrap | wrap-reverse </span>
-}</code>
-                </pre>
+}</code></pre>
                 <ul>
                     <li>nowrap(默认):所有元素都会显示在一行。</li>
                     <li>wrap:flex元素将会换行，从上到下。</li>
@@ -135,50 +132,180 @@ title: 翻译：Flexbox详解
         </div>
         <div class="prop-item">
             <h4 id="p-t-4"><a class="title" href="#p-t-4">#</a>flex-flow</h4>
-            <div class="detail"></div>
+            <div class="detail">
+                这是flex-direction和flex-wrap属性的缩写形式，定义了flex容器的主轴和交叉轴。默认值为：row nowrap。
+                <pre ref="CSS" class=""><code>
+<span class="key">flex-flow</span>: <span class="value">&lt;'flex-direction'&gt; || &lt;'flex-wrap'&gt; </span>
+</code></pre>
+            </div>
         </div>
         <div class="prop-item">
             <h4 id="p-t-5"><a class="title" href="#p-t-5">#</a>justify-content</h4>
-            <div class="detail"></div>
+            <div class="detail">
+                <div class="img-wrapper"><img src="{{site.baseurl}}/images/justify-content.svg"></div>
+                本属性定义了元素在主轴上的对齐方式。当所有处在同一行的元素不够灵活时或者排列自适应但已经达到最大的尺寸的时候，本属性可以帮助分配多余的空间。如果元素溢出本行，也可以控制其对齐方式。
+                <pre ref="CSS" class="">
+                    <code>
+<span class="prop">.container</span> {
+  <span class="key">justify-content</span>: <span class="value">flex-start | flex-end | center | space-between | space-around</span>
+}</code></pre>
+                <ul>
+                    <li>flex-start(默认):元素向行开始的方向对齐</li>
+                    <li>flex-end:元素向行结束的方向对齐</li>
+                    <li>center:元素相对于行居中对齐</li>
+                    <li>space-between:元素均匀的排放于一行中；第一个位于行首，最后一个位于行尾</li>
+                    <li>Space-around:元素之间具有相同的空间。注意：外表上来看各个空间是有差异的，因为所有的元素两边都有相同的空间。第一个元素将会有一个单位的空间相对于容器的边缘，但下一个元素将会有两个单位的空间因为下一个必须将自身的空间计算在内。</li>
+                </ul>
+            </div>
         </div>
         <div class="prop-item">
             <h4 id="p-t-6"><a class="title" href="#p-t-6">#</a>align-items</h4>
-            <div class="detail"></div>
+            <div class="detail">
+                <div class="img-wrapper"><img src="{{site.baseurl}}/images/align-items.svg"></div>
+                本属性定义了flex元素怎样在交叉轴上排列的默认行为。和justtify-content属性相互类似。
+                <pre ref="CSS" class="">
+                    <code>
+<span class="prop">.container</span> {
+  <span class="key">align-items</span>: <span class="value">flex-start | flex-end | center | baseline | stretch</span>
+}</code></pre>
+                <ul>
+                    <li>flex-start:元素向交叉轴的开始方向对齐</li>
+                    <li>flex-end：元素向交叉轴的结束方向对齐</li>
+                    <li>center:元素在交叉轴上居中对齐</li>
+                    <li>baseline:元素对齐类似于基线对齐</li>
+                    <li>stretch（默认）:拉伸以是填充容器(仍然限制于min-width/max-width属性)</li>
+                </ul>
+            </div>
         </div>
         <div class="prop-item">
-            <h4 id="p-t-7"><a class="title" href="#p-t-7">#</a></h4>
-            <div class="detail">align-content</div>
+            <h4 id="p-t-7"><a class="title" href="#p-t-7">#</a>align-content</h4>
+            <div class="detail">
+                <div class="img-wrapper"><img src="{{site.baseurl}}/images/align-content.svg"></div>
+                本属性用来对齐flex容器的多个行当在交叉轴上有额外的所以空间的时候， 类似于在主轴上justtify-content的作用。
+                注意： 这个属性在只有一行元素的情况下没有效果。
+             <pre ref="CSS" class="">
+                    <code>
+<span class="prop">.container</span> {
+  <span class="key">align-content</span>: <span class="value">flex-start | flex-end | center | space-between | space-around | stretch</span>
+}</code></pre>
+            </div>
+            <ul>
+                <li>flex-start: 所有行位于容器的开始部位</li>
+                <li>flex-end: 所有行位于容器的结束部位</li>
+                <li>center:所有行位于整个容器中间</li>
+                <li>space-between:行均匀的分布；第一行位于容器开始位置，最后一行位于容器结束位置</li>
+                <li>space-around:行均匀的分布，并且间隔的相同的空间。</li>
+                <li>stretch(默认):行相应的扩展填充整个容器</li>
+            </ul>
         </div>
     </div>
-    <h2>孩子节点属性(flex items)</h2>
+    
     <div class="children">
+        <h2>孩子节点属性(flex items)</h2>
         <div class="prop-item">
             <h4 id="c-t-1"><a class="title" href="#c-t-1">#</a>order</h4>
-            <div class="detail"></div>
+            <div class="detail">
+                <div class="img-wrapper"><img src="{{site.baseurl}}/images/order-2.svg"></div>
+                默认情况下,flex的元素按照源码中html的顺序排列。然后，order属性可以控制元素在容器中的排列。
+                 <pre ref="CSS" class="">
+                    <code>
+<span class="prop">.item</span> {
+  <span class="key">order</span>: <span class="value">&lt;integer&gt;</span>
+}</code></pre>
+            </div>
         </div>
         <div class="prop-item">
             <h4 id="c-t-2"><a class="title" href="#c-t-2">#</a>flex-grow</h4>
-            <div class="detail"></div>
+            <div class="detail">
+                <div class="img-wrapper"><img src="{{site.baseurl}}/images/flex-grow.svg"></div>
+                这个属性赋予flex元素在需要的时候具有增长（拉伸）的能力。它可以指定元素在容器中可以占据的有效空间所对应的数值。
+                如果所有元素的flex-grow都被设置为1，则剩余空间将会被平分。如果其中一个被设置为2，该元素将拥有两倍于其他元素的剩余空间。
+                <pre ref="CSS" class="">
+                <code><span class="prop">.item</span>{
+    <span class="key">flex-grow</span>: <span class="value">&lt;number&gt;/*default 0*/</span>
+}</code></pre>
+                注意：负值是无效的。
+            </div>
         </div>
         <div class="prop-item">
-            <h4 id="c-t-3"><a class="title" href="#c-t-3">#</a></h4>
-            <div class="detail">flex-shrink</div>
+            <h4 id="c-t-3"><a class="title" href="#c-t-3">#</a>flex-shrink</h4>
+            <div class="detail">
+                本属性赋予了元素在需要的时候可以被压缩的能力。
+                <pre ref="CSS" class=""><code>
+<span class="prop">.item</span> {
+    <span class="key">flex-shrink</span>: <span class="value">&lt;number&gt;/*default 1*/</span>
+}</code></pre>
+                注意：负值是无效的。
+            </div>
         </div>
         <div class="prop-item">
             <h4 id="c-t-4"><a class="title" href="#c-t-4">#</a>flex-basis</h4>
-            <div class="detail"></div>
+            <div class="detail">
+                这个属性定义了元素在没有分配剩余空间之前的默认的尺寸。可以试一个长度(e.g.20%, 5rem, etc.)或者一个关键字.The auto keyword means "look at my width or height property" (which was temporarily done by the main-size keyword until deprecated). The content keyword means "size it based on the item's content" - this keyword isn't well supported yet, so it's hard to test and harder to know what its brethren max-content, min-content, and fit-content do.
+                <pre ref="CSS" class=""><code>
+<span class="prop">.item</span> {
+    <span class="key">flex-basis</span>: <span class="value">&lt;length&gt; | auto;/* default auto */</span>
+}</code></pre>
+            </div>
         </div>
         <div class="prop-item">
             <h4 id="c-t-5"><a class="title" href="#c-t-5">#</a>flex</h4>
-            <div class="detail"></div>
+            <div class="detail">
+                这个属性flex-grow,flex-shrink和flex-basis的缩写简写形式。第二和第三个属性是可选的。默认值为0 1 auto。
+                <pre ref="CSS" class=""><code>
+<span class="prop">.item</span> {
+    <span class="key">flex</span>: <span class="value">none | [ &lt;'flex-grow'&gt; &lt;'flex-shrink'&gt;? || &lt;'flex-basis'&gt; ]</span>
+}</code></pre>  
+            建议使用本缩写属性而不是分别设置各个属性。
+            </div>
         </div>
         <div class="prop-item">
-            <h4 id="c-t-6"><a class="title" href="#c-t-6">#align-self</a>align-self</h4>
-            <div class="detail"></div>
+            <h4 id="c-t-6"><a class="title" href="#c-t-6">#</a>align-self</h4>
+            <div class="detail">
+                <div class="img-wrapper"><img src="{{site.baseurl}}/images/align-self.svg"></div>
+                这个属性允许当前元素的默认对齐方式被本属性值所覆盖。
+                <pre ref="CSS" class=""><code>
+<span class="prop">.item</span> {
+    <span class="key">flex</span>: <span class="value">auto | flex-start | flex-end | center | baseline | stretch;</span>
+}</code></pre>    
+            </div>
         </div>
     </div>
-    
-    
+    </div>
+    <fieldset>
+        <legend><h2>flexbox前缀</h2></legend>
+        让我们通过一个简单的示例来解决一个日常遇到的问题： 居中对齐。 如果你使用flex布局则再简单不过了。
+                        <pre ref="SCSS" class=""><code>
+<span class="prop">@mixin flexbox()</span> {
+    <span class="key">display</span>: <span class="value">-webkit-box;</span>
+    <span class="key">display</span>: <span class="value">-moz-box;</span>
+    <span class="key">display</span>: <span class="value">-ms-flexbox;</span>
+    <span class="key">display</span>: <span class="value">-webkit-flex;</span>
+    <span class="key">display</span>: <span class="value">flex;</span>
+}
+<span class="prop">@mixin flex($values)</span> {
+    <span class="key">-webkit-box-flex</span>: <span class="value">$values;</span>
+    <span class="key">-moz-box-flex</span>: <span class="value">$values;</span>
+    <span class="key">-webkit-flex</span>: <span class="value">$values;</span>
+    <span class="key">-ms-flex</span>: <span class="value">$values;</span>
+    <span class="key">flex</span>: <span class="value">$values;</span>
+}
+<span class="prop">@mixin order($val)</span> {
+    <span class="key">-webkit-box-ordinal-group</span>: <span class="value">$val;</span>
+    <span class="key">-moz-box-ordinal-group</span>: <span class="value">$val;</span>
+    <span class="key">-ms-flex-order</span>: <span class="value">$val;</span>
+    <span class="key">-webkit-order</span>: <span class="value">$val;</span>
+    <span class="key">order</span>: <span class="value">$val;</span>
+}
+<span class="prop">.wrapper</span> {
+    <span class="key"> @include flexbox();</span>
+}
+<span class="prop">.item</span> {
+    <span class="key"> @include flex(1 200px);</span>
+    <span class="key">  @include order(2);</span>
+}
+</code></pre>
+    </fieldset>
     ...未完待续
 </fieldset>
 <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox">原文地址：https://css-tricks.com/snippets/css/a-guide-to-flexbox</a>
