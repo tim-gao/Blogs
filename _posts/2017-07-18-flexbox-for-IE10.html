@@ -4,10 +4,10 @@ title: flexbox for IE 10
 ---
 <div class="wrapper-20170718">
     <h2>Flexbox在IE10中的用法</h2>
-    Flex弹性布局确实是CSS3中很强大的一个属性集，但想用好它也不是那么容易。当我们在体会到他的优越性的同时也应该留意flex属性的缺陷。就我个人的理解，我觉得flex布局的以下两大特点缺点或者说特点需要特别关注：
+    Flex弹性布局确实是CSS3中很强大的一个属性集，但想用好它也不是那么容易。当我们在关注它的优点的同时也应该留意flex属性的缺陷。就我个人的理解，我觉得flex布局有以下两大缺点（特点）需要特别关注：
     <ul>
         <li>(1)设为 Flex 布局以后，子元素的float、clear和vertical-align属性将失效。</li>
-        <li>(2)对于不同浏览器的的支持，当然这里特指IE10</li>
+        <li>(2)对于不同浏览器的的支持需要些很多的前缀，甚至属性名称有可能完全不同。</li>
     </ul>
     本文将记录我在工作中积累的关于flexbox在IE10中的用法。
     <table>
@@ -32,7 +32,7 @@ title: flexbox for IE 10
             </tr>
             <tr>
                 <td>flex-flow</td>
-                <td>flex-flow: <'flex-direction'> ;|| <'flex-wrap'> 
+                <td>flex-flow: <'flex-direction'> || <'flex-wrap'> ;
                     <div class="forIE10">-ms-flex-flow: <'flex-direction'> || <'flex-wrap'>; /*IE10*/</div>
                 </td>
             </tr>
@@ -56,20 +56,20 @@ title: flexbox for IE 10
             </tr>
             <tr>
                 <td>order</td>
-                <td>order: &lt;integer&tg;;
-                 <div class="forIE10">-ms-flex-order: &lt;integer&tg;;/*IE10*/</div>
+                <td>order: &lt;integer&gt;;
+                 <div class="forIE10">-ms-flex-order: &lt;integer&gt;;/*IE10*/</div>
                 </td>
             </tr>
             <tr>
                 <td>flex-grow</td>
-                <td>flex-grow: &lt;number&tg;;
-                  <div class="forIE10">-ms-flex-positive: &lt;number&tg;;/*IE10*/</div>
+                <td>flex-grow: &lt;number&gt;;
+                  <div class="forIE10">-ms-flex-positive: &lt;number&gt;;/*IE10*/</div>
                 </td>
             </tr>
             <tr>
                 <td>flex-shrink</td>
-                <td>flex-shrink: &lt;number&tg;;
-                 <div class="forIE10">-ms-flex-negative:  &lt;number&tg;;/*IE10*/</div>
+                <td>flex-shrink: &lt;number&gt;;
+                 <div class="forIE10">-ms-flex-negative:  &lt;number&gt;;/*IE10*/</div>
                 </td>
             </tr>
             <tr>
@@ -81,7 +81,7 @@ title: flexbox for IE 10
             <tr>
                 <td>flex</td>
                 <td>flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ];
-                  <div class="forIE10">-ms-flex: &lt;positive-flex&tg; &lt;negative-flex&gt; &lt;preferred-size&gt;
+                  <div class="forIE10">-ms-flex: &lt;positive-flex&gt; &lt;negative-flex&gt; &lt;preferred-size&gt;
                   /*IE10*/<br>IE 10 uses the following format for flex property
                   -ms-flex: &lt;positive-flex&gt; &lt;negative-flex&gt; &lt;preferred-size&gt;
                   And single props for each argument: -ms-flex-positive, -ms-flex-negative and -ms-flex-preferred-size (there is no flex-grow, flex-shrink and flex-basis in IE 10)</div>
