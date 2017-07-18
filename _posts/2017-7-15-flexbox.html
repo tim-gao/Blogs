@@ -181,7 +181,7 @@ title: 翻译：Flexbox详解
             <h4 id="p-t-7"><a class="title" href="#p-t-7">#</a>align-content</h4>
             <div class="detail">
                 <div class="img-wrapper"><img src="{{site.baseurl}}/images/align-content.svg"></div>
-                本属性用来对齐flex容器的多个行当在交叉轴上有额外的所以空间的时候， 类似于在主轴上justtify-content的作用。
+                本属性用来对齐flex容器的多个行当在交叉轴上有额外的空间的时候， 类似于在主轴上justtify-content的作用。
                 注意： 这个属性在只有一行元素的情况下没有效果。
              <pre ref="CSS" class="">
                     <code>
@@ -272,41 +272,41 @@ title: 翻译：Flexbox详解
         </div>
     </div>
     </div>
+</fieldset>
     <fieldset>
         <legend><h2>flexbox前缀</h2></legend>
-        让我们通过一个简单的示例来解决一个日常遇到的问题： 居中对齐。 如果你使用flex布局则再简单不过了。
-                        <pre ref="SCSS" class=""><code>
-<span class="prop">@mixin flexbox()</span> {
+        Flexbox 需要通过一些前缀来支持多浏览器。当然并不是仅仅简单的添加前缀，有一些属性名称和值是完全不同的。这是因为flexbox文档已经修改过很多次了。
+        下面是通过Sass的@mixin来添加前缀，给我们提供了一种方案来满足我们的要求：
+        <pre ref="SCSS" class=""><code>
+<span class="prop"> @mixin flexbox()</span> {
     <span class="key">display</span>: <span class="value">-webkit-box;</span>
     <span class="key">display</span>: <span class="value">-moz-box;</span>
     <span class="key">display</span>: <span class="value">-ms-flexbox;</span>
     <span class="key">display</span>: <span class="value">-webkit-flex;</span>
     <span class="key">display</span>: <span class="value">flex;</span>
-}
-<span class="prop">@mixin flex($values)</span> {
+ }
+<span class="prop"> @mixin flex($values)</span> {
     <span class="key">-webkit-box-flex</span>: <span class="value">$values;</span>
     <span class="key">-moz-box-flex</span>: <span class="value">$values;</span>
     <span class="key">-webkit-flex</span>: <span class="value">$values;</span>
     <span class="key">-ms-flex</span>: <span class="value">$values;</span>
     <span class="key">flex</span>: <span class="value">$values;</span>
-}
-<span class="prop">@mixin order($val)</span> {
+ }
+<span class="prop"> @mixin order($val)</span> {
     <span class="key">-webkit-box-ordinal-group</span>: <span class="value">$val;</span>
     <span class="key">-moz-box-ordinal-group</span>: <span class="value">$val;</span>
     <span class="key">-ms-flex-order</span>: <span class="value">$val;</span>
     <span class="key">-webkit-order</span>: <span class="value">$val;</span>
     <span class="key">order</span>: <span class="value">$val;</span>
-}
-<span class="prop">.wrapper</span> {
+ }
+<span class="prop"> .wrapper</span> {
     <span class="key"> @include flexbox();</span>
-}
-<span class="prop">.item</span> {
+ }
+<span class="prop"> .item</span> {
     <span class="key"> @include flex(1 200px);</span>
-    <span class="key">  @include order(2);</span>
-}
+    <span class="key"> @include order(2);</span>
+ }
 </code></pre>
     </fieldset>
-    ...未完待续
-</fieldset>
 <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox">原文地址：https://css-tricks.com/snippets/css/a-guide-to-flexbox</a>
 </div>

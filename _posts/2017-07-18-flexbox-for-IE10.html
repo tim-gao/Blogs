@@ -1,0 +1,103 @@
+---
+layout: default
+title: flexbox for IE 10
+---
+<div class="wrapper-20170718">
+    <h2>Flexbox在IE10中的用法</h2>
+    Flex弹性布局确实是CSS3中很强大的一个属性集，但想用好它也不是那么容易。当我们在体会到他的优越性的同时也应该留意flex属性的缺陷。就我个人的理解，我觉得flex布局的以下两大特点缺点或者说特点需要特别关注：
+    <ul>
+        <li>(1)设为 Flex 布局以后，子元素的float、clear和vertical-align属性将失效。</li>
+        <li>(2)对于不同浏览器的的支持，当然这里特指IE10</li>
+    </ul>
+    本文将记录我在工作中积累的关于flexbox在IE10中的用法。
+    <table>
+        <tbody>
+            <tr>
+                <td>display</td>
+                <td>display:flex |inline-flex;
+                    <div class="forIE10">display:-ms-flexbox | -ms-inline-flexbox; /*IE10*/</div>
+                </td>
+            </tr>
+            <tr>
+                <td>flex-direction</td>
+                <td>flex-direction: row | row-reverse | column |column-reverse;
+                    <div class="forIE10">-ms-flex-direction :row | row-reverse | column |column-reverse; /*IE10*/</div>
+                </td>
+            </tr>
+            <tr>
+                <td>flex-wrap</td>
+                <td>flex-wrap: nowrap | wrap | wrap-reverse;
+                    <div class="forIE10">-ms-flex-wrap: nowrap | wrap | wrap-reverse; /*IE10*/</div>
+                </td>
+            </tr>
+            <tr>
+                <td>flex-flow</td>
+                <td>flex-flow: <'flex-direction'> ;|| <'flex-wrap'> 
+                    <div class="forIE10">-ms-flex-flow: <'flex-direction'> || <'flex-wrap'>; /*IE10*/</div>
+                </td>
+            </tr>
+            <tr>
+                <td>justify-content</td>
+                <td>justify-content: flex-start | flex-end | center | space-between | space-around ;
+                <div class="forIE10">-ms-flex-pack: start | end | center | justify; /*IE10*/</div>
+                </td>
+            </tr>
+            <tr>
+                <td>align-items</td>
+                <td>align-items: flex-start | flex-end | center | baseline | stretch;
+                <div class="forIE10">-ms-flex-align: start | end | center | justify; /*IE10*/</div>
+                </td>
+            </tr>
+            <tr>
+                <td>align-content</td>
+                <td>align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+                <div class="forIE10">-ms-flex-line-pack: start | end | center | justify; /*IE10*/</div>
+                </td>
+            </tr>
+            <tr>
+                <td>order</td>
+                <td>order: &lt;integer&tg;;
+                 <div class="forIE10">-ms-flex-order: &lt;integer&tg;;/*IE10*/</div>
+                </td>
+            </tr>
+            <tr>
+                <td>flex-grow</td>
+                <td>flex-grow: &lt;number&tg;;
+                  <div class="forIE10">-ms-flex-positive: &lt;number&tg;;/*IE10*/</div>
+                </td>
+            </tr>
+            <tr>
+                <td>flex-shrink</td>
+                <td>flex-shrink: &lt;number&tg;;
+                 <div class="forIE10">-ms-flex-negative:  &lt;number&tg;;/*IE10*/</div>
+                </td>
+            </tr>
+            <tr>
+                <td>flex-basis</td>
+                <td>flex-basis: &lt;length&gt; | auto;
+                  <div class="forIE10">-ms-flex-preferred-size: &lt;length&gt; | auto;/*IE10*/</div>
+                </td>
+            </tr>
+            <tr>
+                <td>flex</td>
+                <td>flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ];
+                  <div class="forIE10">-ms-flex: &lt;positive-flex&tg; &lt;negative-flex&gt; &lt;preferred-size&gt;
+                  /*IE10*/<br>IE 10 uses the following format for flex property
+                  -ms-flex: &lt;positive-flex&gt; &lt;negative-flex&gt; &lt;preferred-size&gt;
+                  And single props for each argument: -ms-flex-positive, -ms-flex-negative and -ms-flex-preferred-size (there is no flex-grow, flex-shrink and flex-basis in IE 10)</div>
+                </td>
+            </tr>
+            <tr>
+                <td>align-self</td>
+                <td>align-self: auto | flex-start | flex-end | center | baseline | stretch;<br>
+                  <div class="forIE10">-ms-flex-item-align: start | end | center | stretch | basline;
+                  /*IE10*/</div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    参考链接：
+
+    <div><a href="http://realworldvalidator.com/css/properties">1. http://realworldvalidator.com/css/properties</a></div>
+    <div><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Advanced_layouts_with_flexbox">2. https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Advanced_layouts_with_flexbox</a></div>
+</div>
