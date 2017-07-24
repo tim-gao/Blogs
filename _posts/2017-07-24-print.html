@@ -1,0 +1,226 @@
+---
+layout: default
+title: 如何构建打印样式
+---
+<h2>如何构建打印样式</h2>
+<p>以前根本不知道打印居然需要专门的去写CSS,当然这也是因为本人对于CSS中media query的理解太过于肤浅。不过做软件就是这样，得活到老学到老，而且新的东西总在飞速的发展，稍有不留神就会被时代的马车所遗忘。任何事情在当你不懂的时候总感觉好难，为了不至于在过了N年之后自己被自己所嘲笑，所以我在这里记录下CSS print的一篇译文。</p>
+
+  在开始本文之前，首先得对CSS<a href="https://www.w3schools.com/cssref/css3_pr_mediaquery.asp"> media query </a>有一定的了解，其中有一个media type为print的时候，所有的样式都是针对于打印时用的。
+  <p>一般来说网站都会有一个类似于print.css的文件用于管理打印方面的样式，当然这个文件里的样式并不会影响正常页面的显示。
+
+  那么如何构建一套打印的样式呢？
+
+  首先创建空的css文件，命名为print.css.然后拷贝以下代码到文件中。</p>
+  <pre class="formatter"><code>
+    /**
+    * Print stylesheet for yourwebsite.com
+    * @version         1.0
+    * @lastmodified    16.06.2016
+    */
+
+    @media print {
+     Your notes
+    }</code></pre>
+    所有的css代码都必须位于print后的大括号内。
+    <h2>1. 定义边框和字体的大小。</h2>
+    <pre class="formatter"><code>
+    /* Setting content width, unsetting floats and margins */
+    /* Attention: the classes and IDs vary from theme to theme. Thus, set own classes here */
+    #content,#page {
+    width: 100%; 
+    margin: 0; 
+    float: none;
+    }
+     
+    /** Setting margins */       
+    @page { margin: 2cm }
+     
+    /* Or: */
+    @page :left {
+    margin: 1cm;
+    }
+     
+    @page :right {
+    margin: 1cm;
+    }
+     
+    /* The first page of a print can be manipulated as well */
+    @page :first {
+      margin: 1cm 2cm;
+    }</code></pre>
+    建议采用以上的设置，定义外边距为2cm.然后设置字体大小。由于打印机和显示器使用的单位是不同的，所以最好要转换一下单位，从pixel(像素),em,rem到points(点).
+    <ul>
+        <li>Pixels => Points</li>
+        <li>6px => 5pt</li>
+        <li>7px => 5pt</li>
+        <li>8px => 6pt</li>
+        <li>9px => 7pt</li>
+        <li>10px => 8pt</li>
+        <li>11px => 8pt</li>
+        <li>12px => 9pt</li>
+        <li>13px => 10pt</li>
+        <li>14px => 11pt</li>
+        <li>15px => 11pt</li>
+        <li>16px => 12pt</li>
+        <li>17px => 13pt</li>
+        <li>18px => 14pt</li>
+        <li>19px => 14pt</li>
+        <li>20px => 15pt</li>
+        <li>21px => 16pt</li>
+        <li>22px => 17pt</li>
+        <li>23px => 17pt</li>
+        <li>24px => 18pt</li>
+    </ul>
+    实践证明12pt是可以达到比较好的打印效果。这时你可以去设置打印的具体字体名称。在纸张中，衬线字体(例如：Georgia)会比较舒服。
+    <pre class="formatter"><code>
+    /* Set font to 16px/13pt, set background to white and font to black.*/
+    /* This saves ink */
+    body {
+    font: 13pt Georgia, "Times New Roman", Times, serif;
+    line-height: 1.3;
+    background: #fff !important;
+    color: #000;
+    }
+     
+    h1 {
+    font-size: 24pt;
+    }
+     
+    h2, h3, h4 {
+    font-size: 14pt;
+    margin-top: 25px;
+    }</code></pre>
+    
+    <h2>2. 使用pagebreaks属性来控制打印时是否重新起一页。</h2>
+    总共有三个CSS属性可以控制在哪里开始重新分一页。( page-break-before, page-break-after, 和page-break-inside )
+    <ul>
+        <li>page-break-before: 决定是否在当前元素之前重新起一页</li>
+        <li>page-break-after: 在当前元素之后重新起一页打印</li>
+        <li>page-break-inside: 这个属性可以使得某一元素被分页所截断，比如图片被截断打印在两页</li>
+    </ul>
+    <pre class="formatter"><code>
+    /* The following settings are possible: */
+    page-break-after  : auto | always | avoid | left | right
+    page-break-before : auto | always | avoid | left | right
+    page-break-inside : auto | avoid</code></pre>
+    <strong>Auto</strong>是打印元素的默认值，<strong>always</strong>表示总会开始新的一页，<strong>avoid</strong>阻止重新分页，<strong>left</strong>和<strong>right</strong>值强制生成盒之前（之后）有一个或者两个分页符，以便下一页被格式化为一个左面或者右面的页面。理想的分页设置应该类似于以下代码：
+
+    <pre class="formatter"><code>
+    /* Defining all page breaks */
+    a {
+        page-break-inside:avoid
+    }
+    blockquote {
+        page-break-inside: avoid;
+    }
+    h1, h2, h3, h4, h5, h6 { page-break-after:avoid; 
+         page-break-inside:avoid }
+    img { page-break-inside:avoid; 
+         page-break-after:avoid; }
+    table, pre { page-break-inside:avoid }
+    ul, ol, dl  { page-break-before:avoid }</code></pre>
+
+    <h2>3. 处理超链接</h2>
+    链接应该被高亮显示以便可以被注意到。由于在打印的纸张是链接是不用被点击的，所有有必要显示出超链接的具体地址。以下的代码可以完成此要求：
+    <pre class="formatter"><code>
+    /* Displaying link color and link behaviour */
+    a:link, a:visited, a {
+    background: transparent;
+    color: #520;
+    font-weight: bold;
+    text-decoration: underline;
+    text-align: left;
+    }
+
+    a {
+        page-break-inside:avoid
+    }
+
+    a[href^=http]:after {
+          content:" &lt; " attr(href) "&gt; ";
+    }
+
+    $a:after &gt; img {
+       content: "";
+    }
+
+    article a[href^="#"]:after {
+       content: "";
+    }
+
+    a:not(:local-link):after {
+    content:" &lt; " attr(href) "&gt; ";</code></pre>
+
+    <h2>4. 隐藏视频和iframe</h2>
+    在纸张中展示出视频其实是不合理的。同时在将iframe设置为display:none的时候也会导致页面比较丑陋。以下的代码可以很好的隐藏iframe和video元素：
+
+    <pre class="formatter"><code>
+    /**
+     * Making intergated videos disappear, and removing the iframes' whitespace to zero. 
+     */
+    .entry iframe, ins {
+        display: none;
+        width: 0 !important;
+        height: 0 !important;
+        overflow: hidden !important;
+        line-height: 0pt !important;
+        white-space: nowrap;
+    }
+    .embed-youtube, .embed-responsive {
+      position: absolute;
+      height: 0;
+      overflow: hidden;
+    }</code></pre>
+
+    <h2>5.隐藏不必要的元素</h2>
+    许多网站的文本域是不同被打印的。一方面是这些文本域并不能提交有用的信息，另一方面这无疑是在浪费墨水。因此，我们会隐藏掉所有的不相关的文本域。
+
+    同时，header, navigation, sidebar, tags, categories, comments, share buttons 和一些元素也是没有必要打印的，也应该隐藏掉。例如：
+    <pre class="formatter"><code>
+    /* Hiding unnecessary elements for the print */
+     
+    #header-widgets, nav, aside.mashsb-container, 
+    .sidebar, .mashshare-top, .mashshare-bottom, 
+    .content-ads, .make-comment, .author-bio, 
+    .heading, .related-posts, #decomments-form-add-comment, 
+    #breadcrumbs, #footer, .post-byline, .meta-single, 
+    .site-title img, .post-tags, .readability 
+    {
+    display: none;
+    }</code></pre>
+
+    <h2>6. 添加额外的信息在打印前或者打印后</h2>
+    有的时候，在打印前或者打印后添加相应的信息是非常有用的。你可以在这里感谢 读者能够打印你的文章，或者展示相应的版本信息。再次提醒，找对你内容区域的CSS类名称是非常重要的。
+    <pre class="formatter"><code>
+    /* Adding custom messages before and after the content */
+    .entry:after {
+    content: "\ All Rights Reserved. (c) 2014 - 2016 TechBrain - techbrain.de";
+    color: #999 !important;
+    font-size: 1em;
+    padding-top: 30px;
+    }
+    #header:before {
+    content: "\ Thank you for printing our article. We hope that some of our other articles can catch your eye as well.";
+    color: #777 !important;
+    font-size: 1em;
+    padding-top: 30px;
+    text-align: center !important;    
+    }</code></pre>
+    <br>
+    原文地址： <a href="https://www.noupe.com/design/css-perfect-print-stylesheet-98272.html">https://www.noupe.com/design/css-perfect-print-stylesheet-98272.html</a>
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
