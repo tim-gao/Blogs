@@ -175,3 +175,96 @@ pre[ref="SCSS"] {
     }
 
 }
+
+#wrapper-music {
+    background: #333;
+    max-width: 460px;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    opacity: 0.9;
+    margin-right: -460px;
+    border-radius: 5px 5px 0 0;
+    box-shadow: 0 0 15px #333;
+    -webkit-transition: margin-right 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    -moz-transition: margin-right 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    -ms-transition: margin-right 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    -o-transition: margin-right 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    transition: margin-right 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    
+    &.show-music-list {
+        margin-right: 0;
+    }
+    >h1 {
+        text-align: center;
+        color: #CCC;
+    }
+
+    ol {
+        padding-left: 0;
+        margin: 0;
+        list-style-type: none;
+        max-height: 300px;
+        overflow: auto;
+
+        li {
+            padding-left: 15px;
+            line-height: 1.8em;
+            cursor: pointer;
+            &:hover {
+                background-color: #000;
+
+                a {
+                    color:#FFF;
+                }
+
+                .fa-play {
+                    color:#FFF;
+                }
+            }
+
+            .fa-play {
+                vertical-align: middle;
+                color:#333;
+                font-size: 8px;
+            }
+
+            a {
+                color:#CCC;
+                text-decoration: none;
+                margin-left: 10px;
+            }
+        }
+    }
+}
+
+.music-switch {
+   width: 50px;
+   height: 50px;
+   background-color: #9BE4D8;
+   display: block;
+   border-radius: 50%;
+   position: fixed;
+   right: 30px;
+   bottom: 10px;
+   line-height: 50px;
+   cursor: pointer;
+   -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+   -moz-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+   -ms-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+   -o-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+   transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+
+   &.move-left {
+        transform: translateX(-460px);
+        .fa-music {
+            transform: rotatey(180deg);
+        }
+   }
+    .fa-music {
+        color: #FFF;
+        font-size: 2em;
+        vertical-align: middle;
+        margin-left: 10px;
+    }
+}
