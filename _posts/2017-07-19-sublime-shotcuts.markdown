@@ -1,6 +1,9 @@
 ---
 layout: default
 title:  "非常有用的sublime快捷键"
+description:
+categories: code
+author: Tim Gao
 ---
 
 <h2>sublime快捷键</h2>

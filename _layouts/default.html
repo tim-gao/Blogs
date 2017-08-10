@@ -1,35 +1,67 @@
+---
+layout: compress
+---
+
 <!DOCTYPE html>
 <html>
-<head>
-    <meta http-equiv="content-type" content="text/html;charset=utf-8">
-    <link rel="stylesheet" type="text/css" href="{{site.baseurl}}/css/style.css">
-    <link rel="stylesheet" type="text/css" href="{{site.baseurl}}/css/csshake.min.css">
-    <link rel="stylesheet" type="text/css" href="{{site.baseurl}}/css/font-awesome.min.css">
-    <title>{{ page.title}}</title>
-</head>
+{% include head.html %}
+
 <body>
-    {% include header.html %}
-    {{content}}
-    {% include footer.html%}
-    <a class="music-switch">
-        <i class="fa fa-music" aria-hidden="true"></i>
-    </a>
-    <div id="wrapper-music">
-        <h1>我的音乐世界</h1>
-        <audio preload></audio>
-        <ol>
-            <li><i class="fa fa-play" aria-hidden="true"></i><a href="#" data-src="http://om5.alicdn.com/980/78980/414285/1771269774_3640976_l.mp3?auth_key=c6d84c9cb332f3ad737531e1d59da0a0-1502420400-0-null">没有什么不同 -- 曲婉婷</a><div class="rectangle-bounce"><div class="rect1"></div><div class="rect2"></div><div class="rect3"></div><div class="rect4"></div><div class="rect5"></div></div></li>
-            <li><i class="fa fa-play" aria-hidden="true"></i><a href="#" data-src="http://om5.alicdn.com/1/169/7169/317164/3522090_340025_l.mp3?auth_key=3e14810b5668f5b7832bae7358c13f1b-1502420400-0-null">故乡--许巍</a><div class="rectangle-bounce"><div class="rect1"></div><div class="rect2"></div><div class="rect3"></div><div class="rect4"></div><div class="rect5"></div></div></li>
-            <li><i class="fa fa-play" aria-hidden="true"></i><a href="#" data-src="http://m10.music.126.net/20170804111225/edb43ce444704d7da4f8e5f8e89c619a/ymusic/a78c/565e/af74/91d4e04fa29442ec42928131e6d77449.mp3">我在人民广场吃炸鸡 -- 阿肆</a><div class="rectangle-bounce"><div class="rect1"></div><div class="rect2"></div><div class="rect3"></div><div class="rect4"></div><div class="rect5"></div></div></li>
-            <li><i class="fa fa-play" aria-hidden="true"></i><a href="#" data-src="http://om5.alicdn.com/169/7169/443870/1770242451_2336526_l.mp3?auth_key=4e21cdb7fb4f75efd1f06846c55e00f6-1502420400-0-null">Jar Of Love -- 曲婉婷</a><div class="rectangle-bounce"><div class="rect1"></div><div class="rect2"></div><div class="rect3"></div><div class="rect4"></div><div class="rect5"></div></div></li>
-            <li><i class="fa fa-play" aria-hidden="true"></i><a href="#" data-src="http://om5.alicdn.com/485/23485/253320/1769915743_2892436_l.mp3?auth_key=fc6f3bf2d23c881b35481bc5620fa989-1502420400-0-null">Someone like you -- Adele</a><div class="rectangle-bounce"><div class="rect1"></div><div class="rect2"></div><div class="rect3"></div><div class="rect4"></div><div class="rect5"></div></div></li>
-            <li><i class="fa fa-play" aria-hidden="true"></i><a href="#" data-src="http://om5.alicdn.com/547/55547/1725099965/1774025101_16365911_l.mp3?auth_key=a2c8b6b8242775761fc8329542d8afb9-1502420400-0-null">I Really Like You -- Carly Rae Jepsen</a><div class="rectangle-bounce"><div class="rect1"></div><div class="rect2"></div><div class="rect3"></div><div class="rect4"></div><div class="rect5"></div></div></li>
-        </ol>
-    </div>
-<!--     <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=16435049&auto=0&height=66"></iframe> -->
-    
-    <script type="text/javascript" src="{{site.baseurl}}/src/vender/jquery-2.2.4.min.js"></script>
-    <script type="text/javascript" src="{{site.baseurl}}/src/vender/audio.min.js"></script>
-    <script type="text/javascript" src="{{site.baseurl}}/src/main.js"></script>
+   <div class="container">
+       
+    {% include sidebar.html %}
+
+    <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->   
+        <div id="main">
+
+             {% include header.html %}
+                    <div class="page-content">
+                        <div class="wrapper">
+                            {{ content }}
+                        </div>
+                    {% include footer.html %}
+                    </div>
+                {% if site.analytics %}
+                    {% include analytics.html %}
+                {% endif %}  
+        </div>
+        
+        
+        
+        
+        
+<script>
+    /* Set the width of the side navigation to 250px */
+    function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    }
+
+    /* Set the width of the side navigation to 0 */
+    function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    }
+</script>
+        
+        
+</div>            
+<a class="music-switch">
+    <i class="fa fa-music" aria-hidden="true"></i>
+</a>
+<div id="wrapper-music">
+    <h1>我的音乐世界</h1>
+    <audio preload></audio>
+    <ol>
+        <li><i class="fa fa-play" aria-hidden="true"></i><a href="#" data-src="http://om5.alicdn.com/980/78980/414285/1771269774_3640976_l.mp3?auth_key=c6d84c9cb332f3ad737531e1d59da0a0-1502420400-0-null">没有什么不同 -- 曲婉婷</a><div class="rectangle-bounce"><div class="rect1"></div><div class="rect2"></div><div class="rect3"></div><div class="rect4"></div><div class="rect5"></div></div></li>
+        <li><i class="fa fa-play" aria-hidden="true"></i><a href="#" data-src="http://om5.alicdn.com/1/169/7169/317164/3522090_340025_l.mp3?auth_key=3e14810b5668f5b7832bae7358c13f1b-1502420400-0-null">故乡--许巍</a><div class="rectangle-bounce"><div class="rect1"></div><div class="rect2"></div><div class="rect3"></div><div class="rect4"></div><div class="rect5"></div></div></li>
+        <li><i class="fa fa-play" aria-hidden="true"></i><a href="#" data-src="http://m10.music.126.net/20170804111225/edb43ce444704d7da4f8e5f8e89c619a/ymusic/a78c/565e/af74/91d4e04fa29442ec42928131e6d77449.mp3">我在人民广场吃炸鸡 -- 阿肆</a><div class="rectangle-bounce"><div class="rect1"></div><div class="rect2"></div><div class="rect3"></div><div class="rect4"></div><div class="rect5"></div></div></li>
+        <li><i class="fa fa-play" aria-hidden="true"></i><a href="#" data-src="http://om5.alicdn.com/169/7169/443870/1770242451_2336526_l.mp3?auth_key=4e21cdb7fb4f75efd1f06846c55e00f6-1502420400-0-null">Jar Of Love -- 曲婉婷</a><div class="rectangle-bounce"><div class="rect1"></div><div class="rect2"></div><div class="rect3"></div><div class="rect4"></div><div class="rect5"></div></div></li>
+        <li><i class="fa fa-play" aria-hidden="true"></i><a href="#" data-src="http://om5.alicdn.com/485/23485/253320/1769915743_2892436_l.mp3?auth_key=fc6f3bf2d23c881b35481bc5620fa989-1502420400-0-null">Someone like you -- Adele</a><div class="rectangle-bounce"><div class="rect1"></div><div class="rect2"></div><div class="rect3"></div><div class="rect4"></div><div class="rect5"></div></div></li>
+        <li><i class="fa fa-play" aria-hidden="true"></i><a href="#" data-src="http://om5.alicdn.com/547/55547/1725099965/1774025101_16365911_l.mp3?auth_key=a2c8b6b8242775761fc8329542d8afb9-1502420400-0-null">I Really Like You -- Carly Rae Jepsen</a><div class="rectangle-bounce"><div class="rect1"></div><div class="rect2"></div><div class="rect3"></div><div class="rect4"></div><div class="rect5"></div></div></li>
+    </ol>
+</div>
+
+<script type="text/javascript" src="{{site.baseurl}}/src/vender/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="{{site.baseurl}}/src/vender/audio.min.js"></script>
+<script type="text/javascript" src="{{site.baseurl}}/src/main.js"></script>    
 </body>
 </html>
