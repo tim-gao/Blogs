@@ -46,4 +46,9 @@ $(function() {
         $(this).toggleClass('move-left');
         $('#wrapper-music').show().toggleClass('show-music-list');
     });
+
+    $('.fa-times').click(function(){
+        $('.music-switch').removeClass('move-left');
+        $('#wrapper-music').removeClass('show-music-list');
+    });
 });
