@@ -2,7 +2,7 @@
 layout: default
 title:  "Setup webfont via grunt locally"
 date:   2017-07-19 
-description: 
+description: 本文记录如何在本地构建[webfont]具体是基于SVG文件借助Grunt插件生成相应的字体文件。
 categories: code
 author: Tim Gao
 ---

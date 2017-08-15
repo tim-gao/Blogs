@@ -299,6 +299,7 @@ pre[ref="SCSS"] {
     -o-transition: margin-right 0.5s cubic-bezier(0.77, 0, 0.175, 1);
     transition: margin-right 0.5s cubic-bezier(0.77, 0, 0.175, 1);
     z-index: 10;
+    font-family: 'Courgette', cursive;
     
     >.fa-times {
         position: absolute;
@@ -316,6 +317,16 @@ pre[ref="SCSS"] {
             left: 50%;
             transform: translate3D(-50%,-50%,0);
         }
+    }
+
+    >.fa-volume-off,
+    >.fa-volume-down {
+        color: #fff;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-size: 1.5em;
+        cursor: pointer;
     }
     &.show-music-list {
         margin-right: 10px;

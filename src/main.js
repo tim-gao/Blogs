@@ -21,6 +21,16 @@ $(function() {
         audio.load($('a', this).attr('data-src'));
         audio.play();
     });
+
+    $('.audio-control').click(function(e){
+        if($(this).hasClass('fa-volume-down')){
+            audio.playPause();
+            $(this).removeClass('fa-volume-down').addClass('fa-volume-off');
+        }else{
+            audio.play();
+            $(this).removeClass('fa-volume-off').addClass('fa-volume-down');
+        }
+    })
     // Keyboard shortcuts
     $(document).keydown(function(e) {
         var unicode = e.charCode ? e.charCode : e.keyCode;

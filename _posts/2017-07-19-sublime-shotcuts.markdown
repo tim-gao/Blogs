@@ -1,7 +1,7 @@
 ---
 layout: default
 title:  "非常有用的sublime快捷键"
-description:
+description: 非常有用的sublime快捷键，记录下来以备不时之需。
 categories: code
 author: Tim Gao
 ---
