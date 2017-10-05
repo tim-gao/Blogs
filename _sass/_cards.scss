@@ -8,6 +8,7 @@
     margin-bottom: 40px;
     padding: 0;
     position: relative;
+    background: rgba(255,255,255,0.5);
     &:hover{
         box-shadow: 0 7px 10px -4px #777;
         -webkit-box-shadow: 0 7px 10px -4px #777;
@@ -21,11 +22,11 @@
 
 .post-meta {
     display: inline-block;
-    background: #26A65B; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to top, #26A65B , #2ECC71); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to top, #26A65B , #2ECC71); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */   
+    //background: #26A65B; /* fallback for old browsers */
+    //background: -webkit-linear-gradient(to top, #26A65B , #2ECC71); /* Chrome 10-25, Safari 5.1-6 */
+    //background: linear-gradient(to top, #26A65B , #2ECC71); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */   
     padding: 10px 25px;
-    color: $background-color;
+    //color: $background-color;
     text-align: center;
     width: 8%;
     font-size: 20px;
