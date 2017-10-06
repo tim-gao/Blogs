@@ -17,6 +17,7 @@ $(function() {
     // Load in a track on click
     $('ol li').click(function(e) {
         e.preventDefault();
+        $('.audiojs').removeClass('error');
         $(this).addClass('playing').siblings().removeClass('playing');
         audio.load($('a', this).attr('data-src'));
         audio.play();

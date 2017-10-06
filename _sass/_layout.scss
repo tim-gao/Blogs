@@ -383,6 +383,18 @@ pre[ref="SCSS"] {
                 color:#CCC;
                 text-decoration: none;
                 margin-left: 10px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: inline-block;
+                white-space: nowrap;
+                vertical-align: middle;
+
+                @media (min-width: 769px) {
+                    max-width: 310px;
+                }
+                @media (max-width: 768px) {
+                    max-width: 238px;
+                }
             }
         }
     }
@@ -498,7 +510,7 @@ pre[ref="SCSS"] {
 }
 #bg {
     background-image: url('../images/bg5.jpg');
-    background-color: #050a10;
+    background-color: #fff;
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
