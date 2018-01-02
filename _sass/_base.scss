@@ -27,6 +27,7 @@ body {
     text-rendering: optimizeLegibility;
     padding: 3%;
     max-width: 1440px;
+    margin: 0 auto;
 
         @media only screen and (max-width: 1100px) {
           padding: 3% 5% 5% 5%;
@@ -180,8 +181,8 @@ pre {
  }
  
 .wrapper .home{
-    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
-    max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
+    // max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
+    // max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
     margin-right: auto;
     margin-left: auto;
     padding-right: $spacing-unit;
