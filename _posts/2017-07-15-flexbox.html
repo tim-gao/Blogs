@@ -1,23 +1,23 @@
 ---
 layout: default
-title: 翻译：Flexbox详解
+title: Flexbox详解
 description: 弹性布局模型(Flexible Box)旨在提供一种非常高效的布局方式，对齐和分配容器中各个子元素的空间，甚至于他们的尺寸是未知的或者动态的。
 categories: code
 author: Tim Gao
 ---
+建议在PC端阅读 :)
 <strong><h2>弹性布局(Flexbox)</h2></strong>
 <p>{{page.date | date_to_string}}</p>
 
-<fieldset>
-    <legend><h2>背景</h2></legend>
+
+    <h2>背景</h2>
     弹性布局模型(Flexible Box)旨在提供一种非常高效的布局方式，对齐和分配容器中各个子元素的空间，甚至于他们的尺寸是未知的或者动态的。（因此叫弹性布局）。
 
     弹性布局的主要方法是赋予容器能够识别子元素的宽度或者高度的能力来完美的填充可利用的空间（最大的适用所有种类的设备尺寸）。弹性布局的容器可以扩张子元素来填充多余的空间，也可以缩放元素避免其溢出。
 
     弹性布局区别于通常布局（块级元素是基于竖向排列的，行内元素是基于横向排列的）的最重要的一点是在排列的方向上（横向/竖向）是未知的。尽管通常的布局可以很好的工作于页面中，但它在支持大屏幕或者复杂的应用程序中缺少灵活性。特别是当屏幕方向翻转，页面大小发生变化，拉伸，压缩等如此状况的时候。
-</fieldset>
-<fieldset>
-    <legend><h2>基础和术语</h2></legend>
+
+    <h2>基础和术语</h2>
     既然弹性布局是一一个模块而非单个属性，自然会包含很多的属性。其中有些是设置在容器上(父容器，即"flex container")，有些是设置在孩子节点上(即"flex item"),如以下详细示意图。
     <div><img alt="flex-image" src="{{site.baseurl}}/assets/img/flexbox.png"></div>
 
@@ -149,7 +149,8 @@ author: Tim Gao
                 <pre ref="CSS" class="">
                     <code>
 <span class="prop">.container</span> {
-  <span class="key">justify-content</span>: <span class="value">flex-start | flex-end | center | space-between | space-around</span>
+  <span class="key">justify-content</span>: <span class="value">flex-start | flex-end | center 
+      | space-between | space-around</span>
 }</code></pre>
                 <ul>
                     <li>flex-start(默认):元素向行开始的方向对齐</li>
@@ -274,9 +275,8 @@ author: Tim Gao
         </div>
     </div>
     </div>
-</fieldset>
-    <fieldset>
-        <legend><h2>flexbox前缀</h2></legend>
+
+        <h2>flexbox前缀</h2>
         Flexbox 需要通过一些前缀来支持多浏览器。当然并不是仅仅简单的添加前缀，有一些属性名称和值是完全不同的。这是因为flexbox文档已经修改过很多次了。
         下面是通过Sass的@mixin来添加前缀，给我们提供了一种方案来满足我们的要求：
         <pre ref="SCSS" class=""><code>
@@ -309,5 +309,4 @@ author: Tim Gao
     <span class="key"> @include order(2);</span>
  }
 </code></pre>
-    </fieldset>
 <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox">原文地址：https://css-tricks.com/snippets/css/a-guide-to-flexbox</a>
