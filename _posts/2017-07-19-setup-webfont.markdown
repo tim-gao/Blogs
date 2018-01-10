@@ -9,12 +9,12 @@ author: Tim Gao
 
 <h2>基于SVG文件在本地构建webfont(Grunt)</h2>
 
-本文记录如何在本地构建[webfont](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization?hl=zh-cn), 具体是基于SVG文件借助Grunt插件生成相应的字体文件。这样就可以通过在CSS @fontface中使用相应的图标，在使用中就可以很方便的自定义图标颜色和大小，最主要的是减小了不必要的文件加载。 具体步骤如下：
+本文记录如何在本地构建[webfont](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization?hl=zh-cn), 具体是基于SVG文件借助Grunt插件生成相应的字体文件。这样就可以在CSS @fontface中使用相应的图标，在使用中就可以很方便的自定义图标颜色和大小，最主要的是减小了不必要的文件加载。 具体步骤如下：
  
 1. 安装 grunt插件 "grunt-webfont" 
 
 	**$ npm install grunt-webfont --save-dev**
-2. 安装ttf2woff2依赖(注意:ttf2woff2.js文件极其有可能回被本地杀毒软件删除，所以安装是请确保暂时关闭杀毒软件。)
+2. 安装ttf2woff2依赖(注意:ttf2woff2.js文件极有可能会被本地杀毒软件删除，所以安装时请确保暂时关闭杀毒软件。)
 
 	**$ npm install ttf2woff2 -g**
 3. 添加相应的Grunt配置 ,如下示例 :
