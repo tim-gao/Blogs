@@ -19,7 +19,7 @@ github: tim-gao
 email: timgao720@gmail.com # mailto: is automatically added
 
 # Comments
-discus-identifier: # Add your Disqus identifier
+discus-identifier: https-tim-gao-github-io-blogs
 
 # Paginate
 paginate: 5
