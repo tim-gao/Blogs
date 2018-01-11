@@ -128,7 +128,8 @@ pre {
 }
 
 .sidebar-social {
-  text-align: center;
+  text-align: left;
+  margin-left: -1rem;
   .social-items {
     display: inline-block;
   }
@@ -171,7 +172,8 @@ pre {
     margin-bottom: 0;
     transition: all .3s;
     color: #15F3A8;
-    font-size: 2.5rem;
+    // font-size: 2.5rem;
+    font-size: 40px;
     margin-top: 0.67rem;
     a {
       color: #15F3A8;
