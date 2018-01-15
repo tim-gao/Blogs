@@ -5,7 +5,7 @@
 
 html {
   line-height: 1.5;
-  font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+//   font-family: 'PT Sans', Helvetica, Arial, sans-serif;
 }
 
 @media screen and (min-width: 500px) {
@@ -128,8 +128,7 @@ pre {
 }
 
 .sidebar-social {
-  text-align: left;
-  margin-left: -1rem;
+  text-align: center;
   .social-items {
     display: inline-block;
   }
@@ -424,9 +423,9 @@ pre[ref="SCSS"] {
     >.fa-times {
         position: absolute;
         color: #fff;
-        font-size: 1.5em;
-        height: 40px;
-        width: 40px;
+        font-size: 16px;
+        height: 30px;
+        width: 30px;
         top: 5px;
         right: 0;
         display: none;
@@ -438,20 +437,22 @@ pre[ref="SCSS"] {
         }
     }
     >.fa-volume-off,
-    >.fa-volume-down {
-        color: #fff;
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        font-size: 1.5em;
-        cursor: pointer;
-    }
+    // >.fa-volume-down {
+    //     color: #fff;
+    //     position: absolute;
+    //     top: 10px;
+    //     left: 10px;
+    //     font-size: 1.5em;
+    //     cursor: pointer;
+    // }
     &.show-music-list {
-        margin-right: 10px;
+        margin-right: 0;
     }
     >h1 {
         text-align: center;
         color: #CCC;
+        font-size: 25px;
+        margin: 5px;
     }
     ol {
         padding-left: 0;
@@ -461,8 +462,8 @@ pre[ref="SCSS"] {
         overflow: auto;
         li {
             padding-left: 15px;
-            line-height: 1.8em;
             cursor: pointer;
+            border-bottom: 1px solid;
             &.playing {
                 background-color: #000;
                 .fa-play {
@@ -495,7 +496,7 @@ pre[ref="SCSS"] {
                 display: inline-block;
                 white-space: nowrap;
                 vertical-align: middle;
-                font-size: 16px;
+                font-size: 14px;
                 @media (min-width: 769px) {
                     max-width: 310px;
                 }
@@ -508,13 +509,12 @@ pre[ref="SCSS"] {
     .rectangle-bounce {
         display: none;
         float: right;
-        height: 20px;
+        height: 18px;
         width: auto;
         right: 0;
         left: 0;
         z-index: 10;
         margin-right: 40px;
-        margin-top: 4px;
         position: relative;
         -webkit-transition: all 0.3s ease-in-out 0;
         transition: all 0.3s ease-in-out 0;
@@ -586,11 +586,11 @@ pre[ref="SCSS"] {
 .music-switch {
     width: 50px;
     height: 50px;
-    background-color: #9BE4D8;
+    background-color: rgba(155, 228, 216,0.3);
     display: block;
     border-radius: 50%;
     position: fixed;
-    right: 30px;
+    right: 5px;
     bottom: 10px;
     line-height: 50px;
     cursor: pointer;
@@ -604,16 +604,53 @@ pre[ref="SCSS"] {
     &.move-left {
         transform: translateX(-460px);
         .fa-music {
+            color: #0ee817;
             transform: rotatey(180deg);
+            animation: myzoom 2s infinite;
+            -moz-animation: myzoom 2s infinite;	/* Firefox */
+            -webkit-animation: myzoom 2s infinite;	/* Safari 和 Chrome */
+            -o-animation: myzoom 2s infinite;
         }
     }
     .fa-music {
-        color: #FFF;
-        font-size: 1.5em;
+        font-size: 20px;
         vertical-align: middle;
+
     }
 }
 // custom style end
+
+//animation for music switch start
+
+@keyframes myzoom
+{
+0% {transform: scale(0.5)}
+50% {transform: scale(1.5)}
+100% {transform: scale(0.5)}
+}
+
+@-moz-keyframes myzoom /* Firefox */
+{
+0% {transform: scale(0.5)}
+50% {transform: scale(1.5)}
+100% {transform: scale(0.5)}
+}
+
+@-webkit-keyframes myzoom /* Safari 和 Chrome */
+{
+0% {transform: scale(0.5)}
+50% {transform: scale(1.5)}
+100% {transform: scale(0.5)}
+}
+
+@-o-keyframes myzoom /* Opera */
+{
+0% {transform: scale(0.5)}
+50% {transform: scale(1.5)}
+100% {transform: scale(0.5)}
+}
+
+//animation for music swtich end
 
 // Media query
 @media screen and (max-width: 960px) {
@@ -662,5 +699,22 @@ pre[ref="SCSS"] {
         >.fa-times {
             display: block;
         }
+    }
+}
+
+// back to top css
+#back-top {
+    display: block;
+    position: fixed;
+    top: 30px;
+    right: 5px;
+    cursor: pointer;
+    > img {
+        width: 35px;
+        height: auto;
+    }
+    .fa-space-shuttle {
+        font-size: 40px;
+        color: #bd2998;
     }
 }
