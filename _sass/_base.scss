@@ -201,6 +201,13 @@ img.post-image, img.page-img {
   padding-bottom: 1rem;
   margin-bottom: 1rem;
   border-bottom: 1px solid #ccc;
+
+  .post-list  {
+    >h2 {
+        font-family: 'Finger Paint',cursive;
+    }
+    a { color: #616;}
+  }
 }
 
 // Pagination
@@ -458,8 +465,6 @@ pre[ref="SCSS"] {
         padding-left: 0;
         margin: 0;
         list-style-type: none;
-        max-height: 300px;
-        overflow: auto;
         li {
             padding-left: 15px;
             cursor: pointer;
@@ -469,9 +474,9 @@ pre[ref="SCSS"] {
                 .fa-play {
                     color: #FFF;
                 }
-                .rectangle-bounce {
-                    display: inline-block;
-                }
+                // .rectangle-bounce {
+                //     display: inline-block;
+                // }
             }
             &:hover {
                 background-color: #000;
@@ -506,81 +511,81 @@ pre[ref="SCSS"] {
             }
         }
     }
-    .rectangle-bounce {
-        display: none;
-        float: right;
-        height: 18px;
-        width: auto;
-        right: 0;
-        left: 0;
-        z-index: 10;
-        margin-right: 40px;
-        position: relative;
-        -webkit-transition: all 0.3s ease-in-out 0;
-        transition: all 0.3s ease-in-out 0;
-        text-align: center;
-        div {
-            height: 100%;
-            width: 7px;
-            margin: 0 3px 0 0;
-            background-color: #fff;
-            display: inline-block;
-            -webkit-animation: stretchdelay 1.2s infinite ease-in-out;
-            animation: stretchdelay 1.2s infinite ease-in-out;
-        }
-        .rect2 {
-            -webkit-animation-delay: -1.1s;
-            animation-delay: -1.1s;
-        }
-        .rect3 {
-            -webkit-animation-delay: -1.0s;
-            animation-delay: -1.0s;
-        }
-        .rect4 {
-            -webkit-animation-delay: -0.9s;
-            animation-delay: -0.9s;
-        }
-        .rect5 {
-            -webkit-animation-delay: -0.8s;
-            animation-delay: -0.8s;
-        }
-        @-webkit-keyframes stretchdelay {
-            0%,
-            40%,
-            100% {
-                transform: scaleY(0.4);
-                -webkit-transform: scaleY(0.4);
-            }
-            20% {
-                transform: scaleY(1);
-                -webkit-transform: scaleY(1);
-            }
-        }
-        @-moz-keyframes stretchdelay {
-            0%,
-            40%,
-            100% {
-                transform: scaleY(0.4);
-                -webkit-transform: scaleY(0.4);
-            }
-            20% {
-                transform: scaleY(1);
-                -webkit-transform: scaleY(1);
-            }
-        }
-        @keyframes stretchdelay {
-            0%,
-            40%,
-            100% {
-                transform: scaleY(0.4);
-                -webkit-transform: scaleY(0.4);
-            }
-            20% {
-                transform: scaleY(1);
-                -webkit-transform: scaleY(1);
-            }
-        }
-    }
+    // .rectangle-bounce {
+    //     display: none;
+    //     float: right;
+    //     height: 18px;
+    //     width: auto;
+    //     right: 0;
+    //     left: 0;
+    //     z-index: 10;
+    //     margin-right: 40px;
+    //     position: relative;
+    //     -webkit-transition: all 0.3s ease-in-out 0;
+    //     transition: all 0.3s ease-in-out 0;
+    //     text-align: center;
+    //     div {
+    //         height: 100%;
+    //         width: 7px;
+    //         margin: 0 3px 0 0;
+    //         background-color: #fff;
+    //         display: inline-block;
+    //         -webkit-animation: stretchdelay 1.2s infinite ease-in-out;
+    //         animation: stretchdelay 1.2s infinite ease-in-out;
+    //     }
+    //     .rect2 {
+    //         -webkit-animation-delay: -1.1s;
+    //         animation-delay: -1.1s;
+    //     }
+    //     .rect3 {
+    //         -webkit-animation-delay: -1.0s;
+    //         animation-delay: -1.0s;
+    //     }
+    //     .rect4 {
+    //         -webkit-animation-delay: -0.9s;
+    //         animation-delay: -0.9s;
+    //     }
+    //     .rect5 {
+    //         -webkit-animation-delay: -0.8s;
+    //         animation-delay: -0.8s;
+    //     }
+    //     @-webkit-keyframes stretchdelay {
+    //         0%,
+    //         40%,
+    //         100% {
+    //             transform: scaleY(0.4);
+    //             -webkit-transform: scaleY(0.4);
+    //         }
+    //         20% {
+    //             transform: scaleY(1);
+    //             -webkit-transform: scaleY(1);
+    //         }
+    //     }
+    //     @-moz-keyframes stretchdelay {
+    //         0%,
+    //         40%,
+    //         100% {
+    //             transform: scaleY(0.4);
+    //             -webkit-transform: scaleY(0.4);
+    //         }
+    //         20% {
+    //             transform: scaleY(1);
+    //             -webkit-transform: scaleY(1);
+    //         }
+    //     }
+    //     @keyframes stretchdelay {
+    //         0%,
+    //         40%,
+    //         100% {
+    //             transform: scaleY(0.4);
+    //             -webkit-transform: scaleY(0.4);
+    //         }
+    //         20% {
+    //             transform: scaleY(1);
+    //             -webkit-transform: scaleY(1);
+    //         }
+    //     }
+    // }
 }
 
 .music-switch {
@@ -618,6 +623,12 @@ pre[ref="SCSS"] {
 
     }
 }
+
+.audiojs {
+    .play-pause {
+        width: 36px;
+    }
+} 
 // custom style end
 
 //animation for music switch start
