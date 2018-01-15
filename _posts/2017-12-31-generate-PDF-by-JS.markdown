@@ -10,7 +10,7 @@ author: Tim Gao
 
 ## install #
 
-这篇文档将概要的讲解pdfmake的基本语法并将展示如何在浏览器中创建PDF文件。如果你对服务器端的打印比较感兴趣请查阅source中的examples文件夹。
+这篇文档将概要的讲解pdfmake的基本语法并将展示如何在浏览器中创建PDF文件。如果你对服务器端的打印比较感兴趣请查阅[source](https://github.com/bpampuch/pdfmake)中的examples文件夹。
 
 在开始的默认配置项中，你应该引入以下两个文件：
 * pdfmake.min.js
