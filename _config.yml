@@ -1,14 +1,14 @@
 # Site settings
-title:          Tale
+title:          生命在于折腾
 description:    "Minimal Jekyll theme for storytellers"
-baseurl:        "/tale"
-url:            "https://chesterhow.github.io"
+baseurl:        ""
+url:            "https://tim-gao.github.io"
 
 # Author
 author:
-  name:         Chester How
-  url:          https://chester.how
-  email:        chesterhow@gmail.com
+  name:         Tim Gao
+  url:          http://julysxy.xyz
+  email:        timgao720@gmail.com
 
 # Build settings
 markdown:       kramdown
@@ -25,3 +25,13 @@ plugins:
 # Permalinks
 permalink:      /:year-:month-:day/:title
 paginate:       5
+
+include: [_pages]
+
+# Social
+facebook: #Add your Facebook
+twitter: #Add your Twitter
+google-plus: 116481721016030562247
+github: tim-gao
+weixin:
+weibo: 1800010472

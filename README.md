@@ -51,7 +51,7 @@ paginate:       5
 3. Delete the `baseurl` line in `_config.yml`:
 
 ```yaml
-baseurl:        "/tale"   # delete this line
+baseurl:        ""   # delete this line
 ```
 
 ## Usage

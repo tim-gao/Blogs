@@ -3,19 +3,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>
-    {% if page.title == "Home" %}
-      {{ site.title }}
-    {% else %}
-      {{ page.title }} &middot; {{ site.title }}
-    {% endif %}
+    {% if page.title == "Home" %} {{ site.title }} {% else %} {{ page.title }} &middot; {{ site.title }} {% endif %}
   </title>
+  <meta name="description" content="{{ page.description }}">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="keywords" content="生命在于折腾, 高柯楠, timgao, tim-gao, 博客, {{ site.name }},程序员,程序袁,Gao Kenan,Kenan Gao, {{page.title}}, {{ site.title }}">
+  <!-- Chrome, Firefox OS and Opera -->
+  <meta name="theme-color" content="#2d2a2a">
+  <!-- Windows Phone -->
+  <meta name="msapplication-navbutton-color" content="#2d2a2a">
+  <!-- iOS Safari -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="#2d2a2a">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+  <link rel="stylesheet" href="{{ " /assets/main.css " | relative_url }}">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+  <link rel="stylesheet" href="{{ " /assets/fonts/font-awesome/css/font-awesome.min.css " | prepend: site.baseurl }}">
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="{{ "/assets/favicon-32x32.png" | relative_url }}">
-  <link rel="icon" type="image/png" sizes="16x16" href="{{ "/assets/favicon-16x16.png" | relative_url }}">
-  <link rel="apple-touch-icon" sizes="180x180" href="{{ "/assets/apple-touch-icon.png" | relative_url }}">
+  <!-- Favicon
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ " /assets/favicon-32x32.png " | relative_url }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ " /assets/favicon-16x16.png " | relative_url }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ " /assets/apple-touch-icon.png " | relative_url }}"> -->
 </head>

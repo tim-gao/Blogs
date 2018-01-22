@@ -10,8 +10,15 @@
           <h2 class="nav-title">{{ site.title }}</h2>
         </a>
         <ul>
-          <li><a href="{{ '/about' | prepend: site.baseurl }}">About</a></li>
-          <li><a href="{{ site.baseurl }}/">Posts</a></li>
+          <li>
+            <a href="{{ site.baseurl }}/">Posts</a>
+          </li>
+          <li>
+            <a href="{{ '/about/' | prepend: site.baseurl }}">About</a>
+          </li>
+        <li>
+          <a href="{{ '/tags/' | prepend: site.baseurl }}">Tags</a>
+        </li>
         </ul>
     </div>
   </nav>
@@ -19,11 +26,30 @@
     <main>
       {{ content }}
     </main>
-
+     {% include analytics.html %}
+     {% include music.html %}
+      <div id="back-top" alt="Top">
+        <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+        <!-- <img src="{{site.baseurl}}/assets/img/backtop.png" alt="Back to Top"> -->
+      </div>
+     <div class="bdsharebuttonbox">
+      <a href="#" class="bds_more" data-cmd="more"></a>
+      <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+      <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+      <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+      <a href="#" class="bds_youdao" data-cmd="youdao" title="分享到有道云笔记"></a>
+      <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+      <a href="#" class="bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+      <a href="#" class="bds_evernotecn" data-cmd="evernotecn" title="分享到印象笔记"></a>
+    </div>
+    <script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "2", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "24" }, "share": {}, "image": { "viewList": ["tsina", "weixin", "douban", "youdao", "fbook", "linkedin", "evernotecn"], "viewText": "分享到：", "viewSize": "16" } }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script>
     <footer>
       <span>
         &copy; <time datetime="{{ site.time }}">{{ site.time | date: '%Y' }}</time> {{ site.author.name }}. Made with Jekyll using the <a href="https://github.com/chesterhow/tale/">Tale</a> theme.
       </span>
     </footer>
+    <script type="text/javascript" src="{{site.baseurl}}/src/vender/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="{{site.baseurl}}/src/vender/audio.min.js"></script>
+    <script type="text/javascript" src="{{site.baseurl}}/src/main.js"></script>
   </body>
 </html>
