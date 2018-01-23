@@ -1,6 +1,6 @@
 # Profile information
 name: Tim Gao
-title: 柯楠 
+title: 不知道真相的柯楠 
 description: > # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
@@ -14,7 +14,7 @@ facebook: #Add your Facebook
 twitter: #Add your Twitter
 google-plus: 116481721016030562247
 github: tim-gao
-weixin:
+weixin: 
 weibo: 1800010472
 
 # Contact form
