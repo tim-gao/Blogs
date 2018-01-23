@@ -63,13 +63,6 @@ $(function() {
         $('#wrapper-music').removeClass('show-music-list');
     });
 
-    $('.sidebar-social .social-icons.fa').click(function(){
-        var $this = $(this),
-            targetUrl = $this.next().attr('href');
-        if ($this.parent().hasClass('ff-active')) {
-            document.location.href = targetUrl;
-        }
-    });
 
     // hide #back-top first
     $("#back-top").hide();
@@ -90,19 +83,6 @@ $(function() {
                 scrollTop: 0
             }, 800);
             return false;
-        });
-
-
-        //init swatch book
-        $('.sb-container').swatchbook({
-            // index of initial centered item
-            center: 3,
-            // number of degrees that is between each item
-            angleInc: 40,
-            neighbor: 15,
-            // if it should be closed by default
-            initclosed: true,
-            closeIdx: 3
         });
     });
 });
