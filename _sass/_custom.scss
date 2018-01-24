@@ -614,3 +614,40 @@ figure.about-me {
 
     }
 }
+
+    .listing {
+      padding-left: 30px;
+      margin-left: 30px;
+      border-left: 2.5px solid #212121;
+      list-style: none;
+
+      .listing-seperator {
+        font-size: 18px;
+      }
+
+      >li {
+        position: relative;
+        margin: 10px 0;
+        text-transform: capitalize;
+
+        .circle{
+          left: -40px;
+          width: 16px;
+          height: 16px;
+          background: #fff;
+          border: 5px solid #898989;
+          border-radius: 50%;
+          position: absolute;
+        }
+
+        &:hover {
+          font-style: italic;
+          font-size: 1.2em;
+          transition: font-size 1s;
+          .circle {
+            background-color: #898989;
+          }
+        }
+      }
+
+    }

@@ -85,4 +85,11 @@ $(function() {
             return false;
         });
     });
+
+
+    //lazyload for the images
+
+    $("img").lazyload({
+        effect: "fadeIn"
+    })
 });
