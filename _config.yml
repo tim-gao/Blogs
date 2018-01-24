@@ -6,9 +6,9 @@ url:            "https://tim-gao.github.io"
 
 # Author
 author:
-  name:         Tim Gao
-  url:          http://julysxy.xyz
-  email:        timgao720@gmail.com
+name:         Tim Gao
+url:          http://julysxy.xyz
+email:        timgao720@gmail.com
 
 # Build settings
 markdown:       kramdown
