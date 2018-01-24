@@ -1,18 +1,20 @@
 ---
 layout: default
-title:  始终固定Footer于页面底部
+title:  固定Footer的5种方案
 description: 
 categories: code
 author: Tim Gao
 ---
 
-# 固定Footer的5中方案
+# 固定Footer的5种方案
 
-通常情况下，Foote是始终固定在页面的底部的。我相信大部分人都会想到利用CSS的position:fixed属性来实现，但这里存在一个问题，假如我的Footer不是固定的，但又想总是保持在页面的最下面。简单想想似乎也没有什么困难的，可是如果你的页面内容不够多，不足于充满一页时就会出现如下的情况：
-![footer position issue]({{site.baseurl}}/assets/img/footer_issue.jpg)
-看起来也并不是一个难题，但在实现的时候你会发现页并不是那么容易，我这里要说的是一种方案就可以满足所有的情况（页面内容不够或者页面内容过长）。好了废话不多说，干货开始：
+通常情况下，Footer是始终固定在页面的底部的。我相信大部分人都会想到利用CSS的position:fixed属性来实现，但这里存在一个问题，假如我希望Footer样式不是固定的，但又想总是保持在页面的最下面。简单想想似乎也没有什么困难的，可是如果你的页面内容不够多，不足于充满一页时就会出现如下的情况：
 
-## 方案一 为容器底边设置负的外边距
+  ![footer position issue]({{site.baseurl}}/assets/img/footer_issue.jpg) 
+
+以下就是针对于上面此类问题的方案。好了废话不多说，干货开始：
+
+## 方案一, 为容器底边设置负的外边距
 
 这里需要一个外部容器Wrapper来包裹除Footer以外的所有元素，然后为它设置一个负的外边距，具体的数值应该等于Footer的高度。比如：Footer高度为80px,那么相应的外边局设置为 margin：-80px. 来看html代码：
 
@@ -42,9 +44,9 @@ CSS 代码：
         height: 50px;
     }
 
-相信你也看到了，这种方案还需要一个额外的元素(.push),可不要小看它，他的存在保证了当你在设置了负的margin之后，footer不至于被拉回来遮挡住部分的内容。而且它不能有margin,否则会影响到整体的布局。当然如果你不想添加额外的push元素，页可以通过为Wrapper元素设置同Footer相同高度的Padding-bottom，效果当然是一样的。
+相信你也看到了，这种方案还需要一个额外的元素(.push),可不要小看它，他的存在保证了当你在设置了负的margin之后，footer不至于被拉回来遮挡住部分的内容。而且它不能有margin,否则会影响到整体的布局。当然如果你不想添加额外的push元素，也可以通过为Wrapper元素设置同Footer相同高度的Padding-bottom，效果当然是一样的。
 
-## 方案二 为Footer设置负的外上边距(margin-top)
+## 方案二, 为Footer设置负的外上边距(margin-top)
 
 这种方案不需要额外的（.push）元素,但是确需要一个存在于内容content内额外的包裹元素（.content-inside）并为它指定一个匹配的padding-bottom值来阻止负的margin引起的footer位置抬高而遮挡页面内容的现象，看HTML代码：
 
@@ -95,7 +97,7 @@ CSS 代码：
         height: 50px;
     }
 
-你可能注意到了计算的时候减去了70个像素，但footer高度只有50个像素。实际上这里我们做了一个假设，假设内容容器里的最后一个元素有20的像素的外边局（margin-bottom:20px）,所以应该减去这个边距才是真正的内容的高度。另外我这里用了一个新的单位VH，它是指viewpoint height的高度，可以理解为当前浏览器的可见窗口的高度。这样我们就不用在为body设置100%属性了。
+你可能注意到了计算的时候减去了70个像素，但footer高度只有50个像素。实际上这里我们做了一个假设，假设内容容器里的最后一个元素有20个像素的外边局（margin-bottom:20px）,所以应该减去这个边距才是真正的内容的高度。另外我这里用了一个新的单位VH，它是指viewpoint height的高度，可以理解为当前浏览器的可见窗口的高度。这样我们就不用在为body设置height:100%属性了。
 
 ## 方案四， 利用Flexbox布局
 
@@ -122,3 +124,37 @@ CSS 代码：
     }
 
 如果你不了解flexbox，参阅我的文章 [flexbox详解](/2017-07-15/flexbox)
+
+## 方案五， 利用Grid布局
+
+grid布局是一种新的布局方式，在浏览器的支持方面还不及flexbox.关于grid的详细讲解，请参阅[这里](https://css-tricks.com/snippets/css/complete-guide-grid/)
+
+HTML代码：
+    
+    <body>
+    <div class="content">
+      content
+    </div>
+    <footer class="footer"></footer>
+    </body>
+  
+CSS 代码：
+
+    html {
+      height: 100%;
+    }
+    body {
+      min-height: 100%;
+      display: grid;
+      grid-template-rows: 1fr auto;
+    }
+    .footer {
+      grid-row-start: 2;
+      grid-row-end: 3;
+    }
+
+以上这个示例可正常运行在chrome Canary 和firefox的开发版本.
+
+相关链接: 
++ [https://css-tricks.com/couple-takes-sticky-footer/](https://css-tricks.com/couple-takes-sticky-footer/)
++ [https://css-tricks.com/snippets/css/complete-guide-grid/](https://css-tricks.com/snippets/css/complete-guide-grid/)
