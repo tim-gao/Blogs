@@ -1,25 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-{% include head.html %}
-<body>
 
-  {% include sidebar.html %}
+  {% include head.html %}
 
-  <main role="main">
-    <div class="content">
-      {{content}}
-      <!-- {% include disqus.html %} -->
-
+  <body>
+    <nav class="nav">
+      <div class="nav-container">
+        <a href="{{ site.baseurl }}/">
+          <h2 class="nav-title">Tim Gao</h2>
+          <h3>{{ site.title }}</h3>
+        </a>
+        <ul>
+          <li>
+            <a href="{{ site.baseurl }}/">Posts</a>
+          </li>
+          <li>
+            <a href="{{ '/about/' | prepend: site.baseurl }}">About</a>
+          </li>
+        <li>
+          <a href="{{ '/tags/' | prepend: site.baseurl }}">Tags</a>
+        </li>
+        </ul>
     </div>
-  </main>
+  </nav>
 
-{% include analytics.html %}
-{% include music.html %}
+    <main>
+      {{ content }}
+    </main>
+     {% include analytics.html %}
+     {% include music.html %}
       <div id="back-top" alt="Top">
-        <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
         <!-- <img src="{{site.baseurl}}/assets/img/backtop.png" alt="Back to Top"> -->
       </div>
-      <script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "2", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "24" }, "slide": { "type": "slide", "bdImg": "0", "bdPos": "right", "bdTop": "100" } }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script>
-
-</body>
+    <footer>
+      <span>
+        &copy; <time datetime="{{ site.time }}">{{ site.time | date: '%Y' }}</time> {{ site.author.name }}. Made with Jekyll using the <a href="https://github.com/chesterhow/tale/">Tale</a> theme.
+      </span>
+    </footer>
+    <script type="text/javascript" src="{{site.baseurl}}/src/vender/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="{{site.baseurl}}/src/vender/audio.min.js"></script>
+    <script type="text/javascript" src="{{site.baseurl}}/src/main.js"></script>
+  </body>
 </html>

@@ -1,26 +1,72 @@
-Fresh is a free blog template for Jekyll
-=============================
+# Tale
 
-![](assets/img/fresh.jpg)
+[![Gem Version](https://badge.fury.io/rb/tale.svg)](https://badge.fury.io/rb/tale)
 
-# Demo
+Tale is a minimal Jekyll theme curated for storytellers. Checkout the demo [here](https://chesterhow.github.io/tale/).
 
-![GIF](assets/img/fresh.gif)
+![Tale screenshot](http://i.imgur.com/pXZrtmo.png)
 
-View this jekyll theme in action [here](http://artemsheludko.pw/fresh/)
+## Features
+- Easy installation
+- Compatible with GitHub Pages
+- Responsive design (looks just as good on mobile)
+- Syntax highlighting, with the help of Pygments
+- Markdown and HTML text formatting
+- Pagination of posts
 
-Integrations
-  - [Google Fonts](https://fonts.google.com/)
-  - [Disqus](https://disqus.com/)
-  - [Font Awesome](http://fontawesome.io/)
-  - Social media links
+## Installation
+### As a Jekyll theme
+1. Add this line to your `Gemfile`:
 
-# How to Use
+```ruby
+gem "tale"
+```
 
-  For those unfamiliar with how Jekyll works, check out [jekyllrb.com](https://jekyllrb.com/) for all the details,
-  or read up on just the basics of [front matter](https://jekyllrb.com/docs/frontmatter/), [writing posts](https://jekyllrb.com/docs/posts/),
-  and [creating pages](https://jekyllrb.com/docs/pages/).
+2. In `_config.yml` replace the `minima` theme with `tale`:
+
+```yaml
+theme: tale
+```
+
+3. Install the theme's gems and dependencies:
+
+```bash
+$ bundle
+```
+
+4. Rename `index.md` to `index.html`. Without this, the `jekyll-paginate` gem will not work.
+
+5. Add these 2 lines in to `_config.yml`:
+
+```yaml
+permalink:      /:year-:month-:day/:title
+paginate:       5
+```
+
+### As a Fork
+1. Fork this repository
+
+2. Delete the unnecessary files/folders: `CODE_OF_CONDUCT.md`, `LICENSE`, `README.md`, `tale.gemspec`
+
+3. Delete the `baseurl` line in `_config.yml`:
+
+```yaml
+baseurl:        ""   # delete this line
+```
+
+## Usage
+Once you've installed the theme, you're ready to work on your Jekyll site. To start off, I would recommend updating `_config.yml` with your site's details.
+
+To build and serve your site, run:
+
+```bash
+$ bundle exec jekyll serve
+```
+
+And you're all set! Head over to http://127.0.0.1:4000/ to see your site in action.
+
+## Contributing
+Found a bug or have a suggestion? Feel free to create an issue or make a pull request!
 
 ## License
-
-GNU General Public License v3.0
+See [LICENSE](https://github.com/chesterhow/tale/blob/master/LICENSE)
