@@ -497,7 +497,6 @@ pre[ref="SCSS"] {
 figure.about-me {
   box-shadow: 0 3px 30px rgba(0, 0, 0, 0.8);
   position: relative;
-  float: left;
   overflow: hidden;
   margin: 10px 1%;
   // min-width: 320px;
@@ -517,6 +516,9 @@ figure.about-me {
       transform 0.35s;
       -webkit-transform: scale3d(1.25, 1.25, 1);
       transform: scale3d(1.25, 1.25, 1);
+      min-height: 120px;
+      display: inline;
+      margin: 0;
   }
 
   figcaption {
@@ -575,6 +577,7 @@ figure.about-me {
     .social-icons {
       z-index: 1000;
       opacity: 0;
+      text-align: left;
       .fa {
         color: #000;
       }
