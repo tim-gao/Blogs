@@ -1,4 +1,10 @@
-
+body {
+  -webkit-text-size-adjust: 100%;
+  background-image: url(/assets/img/bg2.jpg);
+  background-repeat: no-repeat;
+  background-size: 100vw 100vh;
+  background-attachment: fixed;
+}
 
 // custom style start
 .detail {
