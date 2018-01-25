@@ -493,7 +493,6 @@ pre[ref="SCSS"] {
 figure.about-me {
   box-shadow: 0 3px 30px rgba(0, 0, 0, 0.8);
   position: relative;
-  float: left;
   overflow: hidden;
   margin: 10px 1%;
   // min-width: 320px;
@@ -513,6 +512,9 @@ figure.about-me {
       transform 0.35s;
       -webkit-transform: scale3d(1.25, 1.25, 1);
       transform: scale3d(1.25, 1.25, 1);
+      min-height: 120px;
+      display: inline;
+      margin: 0;
   }
 
   figcaption {
@@ -571,6 +573,7 @@ figure.about-me {
     .social-icons {
       z-index: 1000;
       opacity: 0;
+      text-align: left;
       .fa {
         color: #000;
       }
@@ -610,3 +613,40 @@ figure.about-me {
 
     }
 }
+
+    .listing {
+      padding-left: 30px;
+      margin-left: 30px;
+      border-left: 2.5px solid #212121;
+      list-style: none;
+
+      .listing-seperator {
+        font-size: 18px;
+      }
+
+      >li {
+        position: relative;
+        margin: 10px 0;
+        text-transform: capitalize;
+
+        .circle{
+          left: -40px;
+          width: 16px;
+          height: 16px;
+          background: #fff;
+          border: 5px solid #898989;
+          border-radius: 50%;
+          position: absolute;
+        }
+
+        &:hover {
+          font-style: italic;
+          font-size: 1.2em;
+          transition: font-size 1s;
+          .circle {
+            background-color: #898989;
+          }
+        }
+      }
+
+    }

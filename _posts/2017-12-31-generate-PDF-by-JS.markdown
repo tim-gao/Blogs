@@ -4,6 +4,7 @@ title: JavaScript在网页中生成PDF
 description: 本文将讲述如何通过类库PDFMake在网页中生成PDF文件，这不同于像Chrome或者Firefox浏览器内置的"Save to PDF"功能，             通过本方法很好了解决了不同浏览器生成PDF的局限性问题。当然利用PDFMake构建PDF时，更多的时间需要我们花在手动的构建              PDF的页面的结构代码中...
 categories: code
 author: Tim Gao
+tags: [codes]
 ---
 
 # pdfmake 文档参考
