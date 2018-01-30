@@ -92,45 +92,4 @@ $(function() {
     $("img").lazyload({
         effect: "fadeIn"
     })
-
-    // create the mouse tail
-  var c = $('canvas.tail')[0];
-  var ctx = c.getContext('2d');
-  $(window).resize(function () {
-    c.width = window.innerWidth;
-    c.height = window.innerHeight;
-  }).resize();
-
-  var ball = {
-    x: 0,
-    y: 0,
-  }
-  var tail = [{ x: 0, y: 0 }, { x: 0, y: 0 }, { x: 0, y: 0 }];
-
-  function loop() {
-    requestAnimationFrame(loop);
-    ctx.clearRect(0, 0, c.width, c.height);
-    ctx.beginPath();
-    ctx.fillStyle = 'rgba(0,0,0,0.5)';
-    ctx.arc(ball.x, ball.y, 10, 0, 2 * Math.PI);
-    ctx.fill();
-    ctx.beginPath();
-    ctx.arc(tail[0].x, tail[0].y, 6, 0, 2 * Math.PI);
-    ctx.fill();
-    ctx.beginPath();
-    ctx.arc(tail[1].x, tail[1].y, 4, 0, 2 * Math.PI);
-    ctx.fill();
-    ctx.beginPath();
-    ctx.arc(tail[2].x, tail[2].y, 2, 0, 2 * Math.PI);
-    ctx.fill();
-
-    TweenMax.to(tail[0], 0.2, { x: ball.x, y: ball.y });
-    TweenMax.to(tail[1], 0.2, { x: tail[0].x, y: tail[0].y });
-    TweenMax.to(tail[2], 0.2, { x: tail[1].x, y: tail[1].y });
-  }
-
-  loop();
-  window.addEventListener('mousemove', function (event) {
-    TweenMax.to(ball, 0.4, { x: event.offsetX, y: event.offsetY });
-  }, false);
 });
