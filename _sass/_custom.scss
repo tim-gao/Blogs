@@ -650,6 +650,11 @@ figure.about-me {
   }
 
 }
-.wf .wf-footer {
-  width: 100%;
+.wf {
+  .wf-footer {
+    width: 100%;
+  }
+  .wf-header .ivu-menu li {
+    line-height: inherit;
+  }
 }

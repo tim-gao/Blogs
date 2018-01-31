@@ -27,11 +27,10 @@
     <main>
       {{ content }}
       {% include baiduShare.html%}
-      <br>
       <div class="wildfire_thread"></div>
       <script>
         var wildfireConfig = () => ({
-          databaseProvider: 'wilddog',
+          databaseProvider: 'firebase',
           databaseConfig: {
             apiKey: "AIzaSyC9hGKyV3tjZaed_TAeJWnsp_vVsC4OIKc",
             authDomain: "timblog-d3a0a.firebaseapp.com",
@@ -40,8 +39,6 @@
             storageBucket: "timblog-d3a0a.appspot.com",
             messagingSenderId: "452418649074"
           },
-          pageURL: 'http://julysxy.xyz',
-          pageTitle: '生命在于折腾',
           theme: 'light',
           locale: 'zh-CN',
           defaultAvatarURL: '{{site.baseurl}}/assets/img/favicon/favicon.ico'
