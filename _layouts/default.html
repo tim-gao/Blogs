@@ -28,6 +28,27 @@
     <main>
       {{ content }}
       {% include baiduShare.html%}
+      <br>
+      <div class="wildfire_thread"></div>
+      <script>
+        var wildfireConfig = () => ({
+          databaseProvider: 'wilddog',
+          databaseConfig: {
+            apiKey: "AIzaSyC9hGKyV3tjZaed_TAeJWnsp_vVsC4OIKc",
+            authDomain: "timblog-d3a0a.firebaseapp.com",
+            databaseURL: "https://timblog-d3a0a.firebaseio.com",
+            projectId: "timblog-d3a0a",
+            storageBucket: "timblog-d3a0a.appspot.com",
+            messagingSenderId: "452418649074"
+          },
+          pageURL: 'http://julysxy.xyz',
+          pageTitle: '生命在于折腾',
+          theme: 'light',
+          locale: 'zh-CN',
+          defaultAvatarURL: '{{site.baseurl}}/assets/img/favicon/favicon.ico'
+        })
+      </script>
+      <script type="text/javascript" src="{{site.baseurl}}/src/vender/wildfire.auto.js"></script>
     </main>
      {% include analytics.html %}
      {% include music.html %}
@@ -44,6 +65,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
     <script type="text/javascript" src="{{site.baseurl}}/src/vender/audio.min.js"></script>
     <script type="text/javascript" src="{{site.baseurl}}/src/main.js"></script>
-  
   </body>
 </html>
