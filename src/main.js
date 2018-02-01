@@ -97,6 +97,7 @@ $(function() {
 
   $('a.searchIcon').click(function() {
     $('#search-container').show();
+    $('#search-input').focus();
     return false;
   });
 
