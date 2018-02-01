@@ -27,9 +27,6 @@
           </a>
         </li>
         </ul>
-        <a href="http://localhost:4000/feed.xml">
-          <i class="fa fa-rss"></i>
-        </a>
     </div>
   </nav>
 
@@ -66,21 +63,9 @@
       <script type="text/javascript" src="{{site.baseurl}}/src/vender/wildfire.auto.js"></script>
     </main>
 
-     {% include analytics.html %}
-     {% include music.html %}
-    <div id="back-top" alt="Top">
-      <i class="fa fa-arrow-up" aria-hidden="true"></i>
-      <!-- <img src="{{site.baseurl}}/assets/img/backtop.png" alt="Back to Top"> -->
-    </div>
+    {% include analytics.html %}
+    {% include music.html %}
     {% include search.html %}
-    <footer>
-      <span>
-        &copy; <time datetime="{{ site.time }}">{{ site.time | date: '%Y' }}</time> {{ site.author.name }}. Made with Jekyll using the <a href="https://github.com/chesterhow/tale/">Tale</a> theme.
-      </span>
-    </footer>
-    <script type="text/javascript" src="{{site.baseurl}}/src/vender/jquery-2.2.4.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
-    <script type="text/javascript" src="{{site.baseurl}}/src/vender/audio.min.js"></script>
-    <script type="text/javascript" src="{{site.baseurl}}/src/main.js"></script>
+    {% include footer.html %}
   </body>
 </html>
