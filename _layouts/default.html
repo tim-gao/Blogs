@@ -20,6 +20,12 @@
         <li>
           <a href="{{ '/tags/' | prepend: site.baseurl }}">Tags</a>
         </li>
+        <li>
+          <a class="searchIcon" href="#">
+            <!-- <i class="fa fa-search"></i> -->
+            Search
+          </a>
+        </li>
         </ul>
     </div>
   </nav>
@@ -61,6 +67,7 @@
         <i class="fa fa-arrow-up" aria-hidden="true"></i>
         <!-- <img src="{{site.baseurl}}/assets/img/backtop.png" alt="Back to Top"> -->
       </div>
+    {% include search.html %}
     <footer>
       <span>
         &copy; <time datetime="{{ site.time }}">{{ site.time | date: '%Y' }}</time> {{ site.author.name }}. Made with Jekyll using the <a href="https://github.com/chesterhow/tale/">Tale</a> theme.

@@ -92,4 +92,16 @@ $(function() {
     $("img").lazyload({
         effect: "fadeIn"
     })
+
+    //search funcationality
+
+  $('a.searchIcon').click(function() {
+    $('#search-container').show();
+    return false;
+  });
+
+  $('.icon-close').click(function(){
+    $('#search-container').hide();
+    return false;
+  });
 });
