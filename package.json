@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/tim-gao/Blogs#readme",
   "devDependencies": {
-    "simple-jekyll-search": "^1.5.0"
+    "simple-jekyll-search": "^1.5.0",
+    "typed.js": "^2.0.6"
   }
 }
