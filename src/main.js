@@ -105,14 +105,4 @@ $(function() {
     $('#search-container').hide();
     return false;
   });
-
-  //type the things about me
-  var typed = new Typed('#typed', {
-    //stringsElement: '#typed-strings'
-    strings: ['嗨，你好有缘人，^1000欢迎访问我的个人博客。^1000 <br>你可以称呼我<strong>‘柯楠’</strong>，注意哦，我不是卡通里的那个工藤新一，我也不知道真相是否只有一个啦。^1000<br> 我是一名web开发, 经验呢不多不少，但我很喜欢折腾，更加热衷于研究新的事物。我很高兴你能从我的博客里找到你想要的东西，如果不介意请从网页底部的社交按钮关注我。在开发这条路上，总是得活到老学到老，相信分享会让我们更快的成长。^1000<br>本站还正在建设中，我会持续更新，欢迎给我留言。谢谢!'],
-    typeSpeed: 150,
-    startDelay: 400,
-    backSpeed: 200,
-  });
-
 });
