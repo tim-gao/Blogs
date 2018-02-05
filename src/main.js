@@ -105,4 +105,6 @@ $(function() {
     $('#search-container').hide();
     return false;
   });
+
+  hljs.initHighlightingOnLoad();
 });

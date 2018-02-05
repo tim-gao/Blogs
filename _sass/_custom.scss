@@ -42,60 +42,6 @@
     }
   }
 }
-
-pre {
-  background: #000;
-  position: relative;
-  color: #fff;
-  font-size: 1.2em;
-  margin: 0;
-  .prop {
-    color: #dfc48c;
-  }
-  .key {
-    color: #9b869c;
-  }
-  .value {
-    color: #cd6a51;
-  }
-  code {
-    display: block;
-    width: 100%;
-    overflow: auto;
-  }
-  &.formatter {
-    font-family: arial;
-    font-size: 12px;
-    border: 1px dashed #CCCCCC;
-    width: 99%;
-    height: auto;
-    overflow: auto;
-    background: rgba(255, 255, 255, 0.40);
-    /* background-image: URL('../images/bg.gif'); */
-    padding: 0px;
-    color: #000000;
-    text-align: left;
-    line-height: 20px;
-    code {
-      color: #000000;
-      word-wrap: normal;
-    }
-  }
-}
-
-pre[ref="CSS"],
-pre[ref="SCSS"] {
-  &::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: #FF9800;
-    content: attr(ref);
-    width: 100%;
-    text-indent: 15px;
-  }
-}
-
 .wrapper-20170718 {
   table {
     background-color: #fff;
@@ -411,14 +357,6 @@ pre[ref="SCSS"] {
     .fa-arrow-up {
       color: #fff;
     }
-  }
-}
-
-.highlight {
-  background: #444;
-
-  code {
-    font-size: 14px;
   }
 }
 
