@@ -1,13 +1,4 @@
 $(function() {
-  //Baidu analysis codes
-    var _hmt = _hmt || [];
-    (function () {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?7756f689043e306e0e2ca1aa85f5f866";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-
     // Setup the player to autoplay the next track
     var a = audiojs.createAll({
         trackEnded: function() {
