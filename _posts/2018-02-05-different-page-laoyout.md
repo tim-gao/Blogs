@@ -12,6 +12,8 @@ tags: [codes]
 
 ## 静态布局
 
+![static layout]({{site.baseurl}}/assets/img/static.png)
+
 [猛戳示例-静态布局](http://runjs.cn/detail/p8jdyyav)
 
  静态布局也叫固定宽度布局，也就是说**页面的大小采用固定的宽度**。无论浏览器的宽度高度如何变化，用户看到的页面大小永远是不变的。静态布局作为一种传统的布局方式流行了很长一段时间，直到media query和响应式布局的出现。
@@ -22,6 +24,8 @@ tags: [codes]
 
 ## 流式布局
 
+![liquid layout]({{site.baseurl}}/assets/img/liquid.png)
+
 [猛戳示例-流式布局](http://runjs.cn/detail/mnkruyfy)
 
  相比静态布局，流式布局页面**采用了相对单位**。典型的流式布局是采用百分比(%)作为主要区块的单位, 当然其他的相对单位(em)也是同样适用的。
@@ -29,6 +33,8 @@ tags: [codes]
  无论当前浏览器宽度是多少，流式布局页面横向上通常会充满整个浏览器，所以它的缺点也显而易见。当浏览器宽度非常大时，页面内容会被拉伸的很宽，段落元素也会占满整个一行。相反的，当浏览器宽度很很窄时，页面元素会挤在一起。
 
 ## 自适应布局
+
+![ataptive layout]({{site.baseurl}}/assets/img/adaptive.png)
 
 [猛戳示例-自适应布局](http://runjs.cn/detail/f07ky1vg)
 
@@ -60,6 +66,8 @@ tags: [codes]
 在对原始的静态布局页面升级时（比如支持手机端），自适应布局就是一种很好的折中方案。这要比直接重构为响应式的容易的多。自适应布局的主要缺点就是在不同的breakpoint(可以理解为分界点但，比如上面例子中的768, 769, 1024,1025)里显示不够完美，总是会存在比较大或者比较小的额外空间，页面会显得很突兀。
 
 ## 响应式布局
+
+![responsive layout]({{site.baseurl}}/assets/img/responsive.png)
 
 [猛戳示例-响应式布局](http://runjs.cn/detail/ds21jgu6)
 
