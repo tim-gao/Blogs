@@ -79,3 +79,9 @@ React 可以渲染 HTML 标签 (strings) 或 React 组件 (classes)。
     ReactDOM.render(myElement, document.getElementById('example'))
 
 React 的 JSX 里**约定分别使用首字母大、小写来区分本地模块的类和 HTML 标签**。
+
+参考链接：
+
+ * [http://www.runoob.com/react/react-tutorial.html](http://www.runoob.com/react/react-tutorial.html)
+ * [http://www.css88.com/archives/5600](http://www.css88.com/archives/5600)
+ * [http://www.css88.com/react/tutorial/tutorial.html](http://www.css88.com/react/tutorial/tutorial.html)
