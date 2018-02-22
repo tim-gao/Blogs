@@ -197,7 +197,9 @@ gulp.watch('sass/*.scss', ['sass']);
         });
     });
   
-  或者改成以下依赖方式书写
+  *解决方案2*
+
+  改成以下依赖方式书写
 
     gulp.watch('./js/*.js',['lint', 'sass', 'scripts']);
 
