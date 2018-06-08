@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title : 项目构建--Gulp
 description: 
 categories: code

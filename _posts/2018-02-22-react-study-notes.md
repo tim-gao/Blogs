@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title : React书写中的注意事项
 description: 
 categories: code

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title:  固定Footer的5种方案
 description: 
 categories: code
