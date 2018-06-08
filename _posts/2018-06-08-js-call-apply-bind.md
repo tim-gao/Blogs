@@ -1,27 +1,27 @@
 ---
 layout: post
-title : JavaScript之call,apply,bind学习笔记
+title : JavaScript之call，apply，bind学习笔记
 description: 
 categories: code
 author: Tim Gao
 tags: [codes]
 ---
 
-# JavaScript之call,apply,bind学习笔记
+# JavaScript之call，apply，bind学习笔记
 
-一直以来，遇到类似于XXX.call,XXX.apply,XXX.bind的代码，总有一种摸不着头脑的感觉。别人说得对呀，还是基础不够扎实，所以这次好好的深入研究了一下这几个家伙，本片博文就是此次学习的一个记录也作为一次总结。
+一直以来，遇到类似于XXX.call，XXX.apply，XXX.bind的代码，总有一种摸不着头脑的感觉。别人说得对呀，还是基础不够扎实，所以这次好好的深入研究了一下这几个家伙，本片博文就是此次学习的一个记录也作为一次总结。
 
-## apply,call，bind的概念
+## apply，call，bind的概念
 
-apply,call，bind即Function.prototype.apply()，Function.prototype.apply()和Function.prototype.apply()。可以看出这三个方法都是Function对象prototype上的方法，所以javascript中所有的function都可以直接调用者三个方法。下面看看MDN官方的解释：
+apply，call，bind即Function.prototype.apply()，Function.prototype.apply()和Function.prototype.apply()。可以看出这三个方法都是Function对象prototype上的方法，所以javascript中所有的function都可以直接调用者三个方法。下面看看MDN官方的解释：
 
 * call() 方法调用一个函数, 其具有一个指定的this值和分别地提供的参数(参数的列表)。
 * apply() 方法调用一个函数, 其具有一个指定的this值，以及作为一个数组（或类似数组的对象）提供的参数。
 > 
-    注意：call()方法的作用和 apply() 方法类似，只有一个区别，就是 call()方法接受的是若干个参数的列表，而apply()方法接受的是一个包含多 个参数的数组。
+    注意：call()方法的作用和 apply() 方法类似，只有一个区别，就是 call()方法接受的是若干个参数的列表，而apply()方法接受的是一个包含多个参数的数组。
 * bind()方法创建一个新的函数, 当被调用时，将其this关键字设置为提供的值，在调用新函数时，在任何提供之前提供一个给定的参数序列。
 
-## call,apply能干什么？
+## call，apply能干什么？
 
 JavaScript中call和apply都可以 **改变某个函数的运行上下文，也就是说可以改变函数内部的this指向**。我们通过一个示例来看
 
@@ -52,6 +52,7 @@ JavaScript中call和apply都可以 **改变某个函数的运行上下文，也�
 下面列举些个常用的例子：
 
 **求数组中的最大值和最小值**
+
     /* min/max number in an array */
     var numbers = [5, 6, 2, 3, 7];
 
