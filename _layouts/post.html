@@ -1,36 +1,23 @@
----
-layout: default
----
+--- layout: default ---
 
 <div class="post">
-  <div class="post-info">
-    <span>Written by</span>
-    {% if page.author %}
-        {{ page.author }}
-    {% else %}
-        {{ site.author.name }}
-    {% endif %}
+    <div class="post-info">
+        <span>Written by</span> {% if page.author %} {{ page.author }} {% else %} {{ site.author.name }} {% endif %} {% if page.date %}
+        <br>
+        <span>on&nbsp;</span><time datetime="{{ page.date }}">{{ page.date | date: "%B %d, %Y" }}</time> {% endif %}
+    </div>
 
-    {% if page.date %}
-      <br>
-      <span>on&nbsp;</span><time datetime="{{ page.date }}">{{ page.date | date: "%B %d, %Y" }}</time>
-    {% endif %}
-  </div>
+    <!-- <h1 class="post-title">{{ page.title }}</h1> -->
+    <div class="post-line"></div>
 
-  <!-- <h1 class="post-title">{{ page.title }}</h1> -->
-  <div class="post-line"></div>
-
-  {{ content }}
+    {{ content }}
 </div>
 
 <div class="pagination">
-  {% if page.next.url %}
-    <a href="{{ page.next.url | prepend: site.baseurl }}" class="left arrow"><span>Previous Post</span>&nbsp;&nbsp;&#8592;</a>
-  {% endif %}
-  {% if page.previous.url %}
-    <a href="{{ page.previous.url | prepend: site.baseurl }}" class="right arrow">&#8594;&nbsp;&nbsp;<span>Next Post</span></a>
-  {% endif %}
+    {% if page.next.url %}
+    <a href="{{ page.next.url | prepend: site.baseurl }}" class="left arrow"><span>Previous Post</span>&nbsp;&nbsp;&#8592;</a> {% endif %} {% if page.previous.url %}
+    <a href="{{ page.previous.url | prepend: site.baseurl }}" class="right arrow">&#8594;&nbsp;&nbsp;<span>Next Post</span></a> {% endif %}
 
-  <!-- <a href="#" class="top">Top</a> -->
-  <div class="ph-height-24"></div>
+    <!-- <a href="#" class="top">Top</a> -->
+    <div class="ph-height-24"></div>
 </div>

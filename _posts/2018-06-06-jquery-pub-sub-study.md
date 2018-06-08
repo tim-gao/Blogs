@@ -1,12 +1,12 @@
 ---
-layout: default
-title : 一段超简单的jquery事件发布和订阅的源码而引发的探索
+layout: post
+title : jquery事件订阅和发布之源码探索
 description: 在一个偶然的机会，看到了一个jQuery事件发布和订阅的源码，静静的看了好久依然不明觉厉，默默的竖起来大拇指，进而引发了一连串的探索，所以有了这篇博文。
 categories: code
 author: Tim Gao
 tags: [codes]
 ---
-# 一段jquery事件订阅和发布的源码引发的探索
+# jquery事件订阅和发布之源码探索
 
 昨天在项目中移植一个功能，想当然的以为自己把相应的需要的类库都引入并注意不遗漏任何依赖包就可以万事大吉了。但不得不说我还是 too young too simple 啊。当在新的环境里执行的时候，居然发现$.publish和$.subscirbe都是undefined, 经过一番查找后才发现原来忽略了一段关键的代码。由于原来的定义$.subscribe的地方包含了些许本不该出现的业务逻辑，怎么看怎么别扭，毕竟有效的降低耦合才是王道。所以就顺手google了一下 jQuery publish subscribe, 于是看到了如下一段代码：
 
