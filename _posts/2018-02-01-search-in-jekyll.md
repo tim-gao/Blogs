@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 添加实时站内搜索功能(jekyll)
 description: 
 categories: code

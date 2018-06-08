@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title:  "非常有用的sublime快捷键"
 description: 非常有用的sublime快捷键，记录下来以备不时之需。
 categories: code

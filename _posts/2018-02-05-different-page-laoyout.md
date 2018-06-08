@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title : 静态布局，流式布局，自适应布局和响应式布局
 description: 
 categories: code

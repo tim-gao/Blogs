@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 2017年末随笔
 description: 是时候该为自己写点什么了，从明天开始就是属于90后的时代了，纵使有万千的感慨，生活依然继续。
 categories: life

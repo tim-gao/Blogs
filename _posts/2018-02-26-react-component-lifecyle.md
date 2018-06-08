@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title : React 组件生命周期学习总结
 description: 
 categories: code

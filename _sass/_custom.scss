@@ -9,6 +9,24 @@ body {
   sans-serif
 }
 // custom style start
+
+// comon style
+    .clearfix {
+        &::before,
+        &::after {
+            display: table;
+            content: ' ';
+        }
+
+        &::after {
+            clear: both;
+        }
+    }
+// common style
+.ph-height-24 {
+    height: 24px;
+}
+
 .detail {
   .img-wrapper {
     img {

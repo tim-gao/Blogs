@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title : ES6--let 和 const
 description: 
 categories: code
