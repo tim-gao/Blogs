@@ -28,6 +28,20 @@
         <time datetime="{{ site.time }}">{{ site.time | date: '%Y' }}</time> {{ site.author.name }}. Made with Jekyll using the
         <a href="https://github.com/chesterhow/tale/">Tale</a> theme.
     </span>
+    <div>
+        <span id="loadTime" style="display: none">This page loaded in 0 seconds</span>
+        <script>
+            window.onload = function(){
+                var t = window.performance && performance.timing;
+                if (!t) {
+                    return;
+                }
+                var _loadTime = (t.loadEventEnd - t.navigationStart) / 1000;
+                document.getElementById('loadTime').innerHTML = 'This page loaded in ' + _loadTime + ' seconds';
+                document.getElementById('loadTime').style.display = 'block';
+            }
+        </script>
+    </div>
 </footer>
 <script type="text/javascript" src="{{site.baseurl}}/src/vender/jquery-2.2.4.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
