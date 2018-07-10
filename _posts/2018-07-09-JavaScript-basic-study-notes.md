@@ -85,4 +85,3 @@ __This 是执行上下文的一个属性, this值在进入上下文时确定，�
 参考链接：
 
 [深入理解JavaScript系列(9) - (13)](http://www.cnblogs.com/TomXu/archive/2011/12/15/2288411.html)
-

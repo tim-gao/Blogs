@@ -60,7 +60,7 @@ $(function() {
 
     $('.fa-times').click(function(){
         $('.music-switch').removeClass('move-left');
-        $('#wrapper-music').removeClass('show-music-list');
+        $('#wrapper-music').hide().removeClass('show-music-list');
     });
 
 
