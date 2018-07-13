@@ -106,17 +106,23 @@ $(function() {
     return false;
   });
 
-  hljs.initHighlightingOnLoad();
+    hljs.initHighlightingOnLoad();
 
-  var h = document.documentElement,
-  b = document.body,
-  st = 'scrollTop',
-  sh = 'scrollHeight',
-  progress = document.querySelector('.progress'),
-  scroll;
+    var h = document.documentElement,
+    b = document.body,
+    st = 'scrollTop',
+    sh = 'scrollHeight',
+    progress = document.querySelector('.progress'),
+    scroll;
 
     document.addEventListener('scroll', function() {
-      scroll = (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100;
-      progress.style.setProperty('--scroll', scroll + '%');
+        scroll = (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100;
+        progress.style.setProperty('--scroll', scroll + '%');
     });
+
+
+    //event for 2018-07-13-transform-card-flip.md
+    $(document).on('click','.wrapper__card .card',function(){
+        $(this).toggleClass('is-fliped');
+    })
 });

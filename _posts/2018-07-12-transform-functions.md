@@ -1,11 +1,12 @@
 ---
 layout: post
-title : CSS transform 3D -- transform functions
+title : CSS transform 3D -- 2.transform functions
 description: 
 categories: code
 author: Tim Gao
 tags: [codes]
 ---
+
 <style>
     .wrapper {
         display: flex;
@@ -84,7 +85,7 @@ transform属性允许在元素使用的坐标系统中使用transform函数到�
     └     ┘
     tx, ty是变形的值 .  */
 
-指定二维矩阵中的6个值，和使用矩阵matrix [a b c d tx ty] 是等效的。说白了，我还是没有看明白这个是怎么计算的，如果我想手动去写一个matrix怎么办，想想都烦？好在我们可能从另一方面去理解，其实matrix函数可以结合其他transform 的function，可以说它是一种简写，从某种意义上来说使用这个函数可以减少我们的文件大小。当然也有一个牛X的工具[THE MATRIX RESOLUTIONS](https://meyerweb.com/eric/tools/matrix/)，可以将一组transform转换为一个matrix函数定义。
+指定二维矩阵中的6个值，和使用矩阵matrix [a b c d tx ty] 是等效的。老实说，我还是没有看明白这个是怎么计算的，如果让我手动去写一个matrix，天哪想想都烦？好在有一个牛X的工具[THE MATRIX RESOLUTIONS](https://meyerweb.com/eric/tools/matrix/)，可以将一组transform转换为一个matrix函数定义。其实matrix函数可以结合其他transform 的function，可以说它是一种简写，从某种意义上来说使用这个函数可以减少我们的文件大小。
 
 比如转换前：
 
@@ -255,6 +256,7 @@ transform属性允许在元素使用的坐标系统中使用transform函数到�
 
 参考链接：
 
-* [MDN transform](https://developer.mozilla.org/en-US/docs/Web/CSS/transform)
-* [css-tricks transform](https://css-tricks.com/almanac/properties/t/transform/)
-* [CSS参考手册](http://css.doyoe.com/)
+1. [Intro to CSS 3D transforms](https://3dtransforms.desandro.com/perspective)
+2. [MDN transform](https://developer.mozilla.org/en-US/docs/Web/CSS/transform)
+3. [css-tricks transform](https://css-tricks.com/almanac/properties/t/transform/)
+4. [CSS参考手册](http://css.doyoe.com/)
