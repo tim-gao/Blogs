@@ -125,4 +125,12 @@ $(function() {
     $(document).on('click','.wrapper__card .card',function(){
         $(this).toggleClass('is-fliped');
     })
+    //event for 2018-07-16-transform-sample-cube-box.md
+    $(document).on('click','#faceChange',function(){
+        var targetCube = $(this).closest('.container').find('.card'),
+            targetBox = $(this).closest('.container').find('.box')
+            $style = $(this).find(':selected').attr('data-style');;
+            targetCube.removeClass('show-front show-back show-left show-right show-top show-bottom').addClass($style);
+            targetBox.removeClass('show-front show-back show-left show-right show-top show-bottom').addClass($style);
+    })
 });
