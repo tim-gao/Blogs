@@ -96,7 +96,7 @@ tags: [codes]
     .sence--step1 .carousel__cell:nth-child(9) { background: hsla(320, 100%, 50%, 0.8); transform: rotateY( 320deg) translateZ(288px);}
 
     .alwaysRotate {
-        animation: infiniteRotate 8s infinite ease-in-out;
+        animation: infiniteRotate 8s infinite linear;
     }
 
     @keyframes infiniteRotate {
