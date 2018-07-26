@@ -13,15 +13,15 @@ tags: [codes]
 
     <div class="scene">
         <div class="carousel">
-            <div class="carousel__cell">1</div>
-            <div class="carousel__cell">2</div>
-            <div class="carousel__cell">3</div>
-            <div class="carousel__cell">4</div>
-            <div class="carousel__cell">5</div>
-            <div class="carousel__cell">6</div>
-            <div class="carousel__cell">7</div>
-            <div class="carousel__cell">8</div>
-            <div class="carousel__cell">9</div>
+            <div class="carousel__cell">a</div>
+            <div class="carousel__cell">b</div>
+            <div class="carousel__cell">c</div>
+            <div class="carousel__cell">d</div>
+            <div class="carousel__cell">e</div>
+            <div class="carousel__cell">f</div>
+            <div class="carousel__cell">g</div>
+            <div class="carousel__cell">h</div>
+            <div class="carousel__cell">i</div>
         </div>
     </div>
 <style type="text/css">
@@ -89,11 +89,36 @@ tags: [codes]
     .sence--step1 .carousel__cell:nth-child(2) { background: hsla( 40, 100%, 50%, 0.8); transform: rotateY( 40deg) translateZ(288px);}
     .sence--step1 .carousel__cell:nth-child(3) { background: hsla( 80, 100%, 50%, 0.8);transform: rotateY( 80deg) translateZ(288px);}
     .sence--step1 .carousel__cell:nth-child(4) { background: hsla(120, 100%, 50%, 0.8); transform: rotateY( 120deg) translateZ(288px);}
-    .sence--step1 .carousel__cell:nth-child(5) { background: hsla(160, 100%, 50%, 0.8) transform: rotateY( 160deg) translateZ(288px);}
+    .sence--step1 .carousel__cell:nth-child(5) { background: hsla(160, 100%, 50%, 0.8); transform: rotateY( 160deg) translateZ(288px);}
     .sence--step1 .carousel__cell:nth-child(6) { background: hsla(200, 100%, 50%, 0.8); transform: rotateY( 200deg) translateZ(288px);}
     .sence--step1 .carousel__cell:nth-child(7) { background: hsla(240, 100%, 50%, 0.8);transform: rotateY( 240deg) translateZ(288px);}
     .sence--step1 .carousel__cell:nth-child(8) { background: hsla(280, 100%, 50%, 0.8); transform: rotateY( 280deg) translateZ(288px);}
     .sence--step1 .carousel__cell:nth-child(9) { background: hsla(320, 100%, 50%, 0.8); transform: rotateY( 320deg) translateZ(288px);}
+
+    .alwaysRotate {
+        animation: infiniteRotate 8s infinite ease-in-out;
+    }
+
+    @keyframes infiniteRotate {
+        0% {
+            transform: translateZ(-288px) rotateY(0)
+        }
+        20% {
+            transform: translateZ(-288px) rotateY(-72deg)
+        }
+        40% {
+            transform: translateZ(-288px) rotateY(-144deg)
+        }
+        60% {
+            transform: translateZ(-288px) rotateY(-216deg)
+        }
+        80% {
+            transform: translateZ(-288px) rotateY(-288deg)
+        }
+        100% {
+            transform: translateZ(-288px) rotateY(-360deg)
+        }
+    }
 </style>
 <div class="scene">
   <div class="carousel carousel--step0">
@@ -164,7 +189,7 @@ tags: [codes]
     .carousel__cell:nth-child(9) { transform: rotateY(320deg) translateZ(288px); }
 
 <div class="scene sence--step1">
-  <div class="carousel">
+  <div class="carousel alwaysRotate">
     <div class="carousel__cell">a</div>
     <div class="carousel__cell">b</div>
     <div class="carousel__cell">c</div>
