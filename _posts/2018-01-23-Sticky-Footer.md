@@ -4,7 +4,7 @@ title:  固定Footer的5种方案
 description: 
 categories: code
 author: Tim Gao
-tags: [codes]
+tags: [CSS]
 ---
 
 # 固定Footer的5种方案

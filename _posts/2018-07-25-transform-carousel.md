@@ -4,7 +4,7 @@ title : CSS transform 3D -- 5.构建carousel
 description: 
 categories: code
 author: Tim Gao
-tags: [codes]
+tags: [CSS]
 ---
 
 作为前端工程师，一定接触过carousel。目前也有很多的相关插件可供我们使用（[Slick](http://kenwheeler.github.io/slick/)），那么既然我们已经熟悉了transform 3D，那为何不通过css的方式实现一个carousel呢？

@@ -55,12 +55,12 @@ $(function() {
     $('.music-switch').click(function(e){
         e.preventDefault();
         $(this).toggleClass('move-left');
-        $('#wrapper-music').show().toggleClass('show-music-list');
+        $('#wrapper-music').css('opacity','1').toggleClass('show-music-list');
     });
 
     $('.fa-times').click(function(){
         $('.music-switch').removeClass('move-left');
-        $('#wrapper-music').hide().removeClass('show-music-list');
+        $('#wrapper-music').removeClass('show-music-list').css('opacity','0');
     });
 
 

@@ -4,7 +4,7 @@ title : CSS transform 3D -- 4.构建正方体和长方体
 description: 
 categories: code
 author: Tim Gao
-tags: [codes]
+tags: [CSS]
 ---
 
 通过上一节，我们已经可以构建出3D的过渡效果了，本节我们来实现一个真正的3D对象--正方体和长方体。
