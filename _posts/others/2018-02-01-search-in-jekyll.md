@@ -10,7 +10,7 @@ tags: [others]
 
 一直想为我的站点添加一个站内搜索功能，苦于不知道能否脱离后端去实现而被搁浅。最近发现了一个非常棒的[插件-Simple-Jekyll-Search](https://github.com/christian-fei/Simple-Jekyll-Search)，
 可以实现jekyll站内实时搜索，添加到站点后效果棒棒啊。
-在此向此插件的作者献上我的膝盖以表敬仰。哈哈！来，一起揭开它的神秘面纱吧。
+在此向此插件的作者献上我的膝盖以表钦佩。
 
 ## 安装
 
@@ -81,15 +81,5 @@ tags: [others]
 
 * searchResultTemplate (String) [可选]
 > 显示单独一条结果的html模板
-
-比如：
-
-    <li><a href="{url}">{title}</a></li>
-
-生成结果：
-
-    <li><a href="/jekyll/update/2014/11/01/welcome-to-jekyll.html">Welcome to Jekyll!</a></li>
-
-前提是你的search.json中包含以上url和title变量
 
 更多配置介绍请参阅 [Simple-Jekyll-Search](https://github.com/christian-fei/Simple-Jekyll-Search/)

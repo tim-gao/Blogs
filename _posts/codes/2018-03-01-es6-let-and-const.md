@@ -87,7 +87,7 @@ for循环中，最好使用let命令。如下面示例，i只在循环块内有�
 
 const是ES6新增的命令，用于声明一个只读的常量。
 
-### 特点1 常量不可更改，而且声明常量时必须赋值。
+### 常量不可更改，而且声明常量时必须赋值。
 
     const MIN = 1;
     MIN = 2; //Uncaught TypeError: Assignment to constant variable.
