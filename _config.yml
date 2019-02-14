@@ -1,12 +1,12 @@
 # Site settings
 title:          生命在于折腾
-description:    "Tim Gao's personal site"
+description:    "Conan Gao's personal site"
 baseurl:        ""
 url:            "https://tim-gao.github.io"
 
 # Author
-author:
-name:         Tim Gao
+author:       Conan Gao
+name:         Conan Gao
 url:          http://julysxy.xyz
 email:        timgao720@gmail.com
 
