@@ -488,7 +488,7 @@ figure.about-me {
 .listing {
   padding-left: 30px;
   margin-left: 30px;
-  border-left: 2.5px solid #212121;
+  border-left: 1px solid #212121;
   list-style: none;
 
   .listing-seperator {
@@ -501,11 +501,11 @@ figure.about-me {
     text-transform: capitalize;
 
     .circle{
-      left: -39px;
+      left: -38px;
       width: 14px;
       height: 14px;
       background: #fff;
-      border: 3px solid #353535;
+      border: 1px solid #353535;
       border-radius: 50%;
       position: absolute;
     }
