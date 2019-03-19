@@ -16,7 +16,8 @@
  *
  */
 
-.hljs {
+
+.highlight .hljs {
   display: block;
   overflow-x: auto;
   padding: 0.5em;
@@ -24,85 +25,89 @@
   color: white;
 }
 
-.hljs-name,
-.hljs-strong {
+.highlight .hljs-name {
+  font-weight: bold;
+  color: #62c8f3;
+}
+.highlight .hljs-strong {
   font-weight: bold;
 }
 
-.hljs-code,
-.hljs-emphasis {
+.highlight .hljs-code,
+.highlight .hljs-emphasis {
   font-style: italic;
 }
 
-.hljs-tag {
+.highlight .hljs-tag {
   color: #62c8f3;
 }
 
-.hljs-variable,
-.hljs-template-variable,
-.hljs-selector-id,
-.hljs-selector-class {
+.highlight .hljs-attr,
+.highlight .hljs-variable,
+.highlight .hljs-template-variable,
+.highlight .hljs-selector-id,
+.highlight .hljs-selector-class {
   color: #ade5fc;
 }
 
-.hljs-string,
-.hljs-bullet {
+.highlight .hljs-string,
+.highlight .hljs-bullet {
   color: #a2fca2;
 }
 
-.hljs-type,
-.hljs-title,
-.hljs-section,
-.hljs-attribute,
-.hljs-quote,
-.hljs-built_in,
-.hljs-builtin-name {
+.highlight .hljs-type,
+.highlight .hljs-title,
+.highlight .hljs-section,
+.highlight .hljs-attribute,
+.highlight .hljs-quote,
+.highlight .hljs-built_in,
+.highlight .hljs-builtin-name {
   color: #ffa;
 }
 
-.hljs-number,
-.hljs-symbol,
-.hljs-bullet {
+.highlight .hljs-number,
+.highlight .hljs-symbol,
+.highlight .hljs-bullet {
   color: #d36363;
 }
 
-.hljs-keyword,
-.hljs-selector-tag,
-.hljs-literal {
+.highlight .hljs-keyword,
+.highlight .hljs-selector-tag,
+.highlight .hljs-literal {
   color: #fcc28c;
 }
 
-.hljs-comment,
-.hljs-deletion,
-.hljs-code {
+.highlight .hljs-comment,
+.highlight .hljs-deletion,
+.highlight .hljs-code {
   color: #888;
 }
 
-.hljs-regexp,
-.hljs-link {
+.highlight .hljs-regexp,
+.highlight .hljs-link {
   color: #c6b4f0;
 }
 
-.hljs-meta {
+.highlight .hljs-meta {
   color: #fc9b9b;
 }
 
-.hljs-deletion {
+.highlight .hljs-deletion {
   background-color: #fc9b9b;
   color: #333;
 }
 
-.hljs-addition {
+.highlight .hljs-addition {
   background-color: #a2fca2;
   color: #333;
 }
 
-.hljs a {
+.highlight .hljs a {
   color: inherit;
 }
 
-.hljs a:focus,
-.hljs a:hover {
+.highlight .hljs a:focus,
+.highlight .hljs a:hover {
   color: inherit;
   text-decoration: underline;
 }
